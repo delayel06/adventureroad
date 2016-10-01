@@ -139,7 +139,7 @@ Attack Modifier: $eap
 Defense Modifier: $edp
 Health: $ehp
 &lt;img src=&quot;picture/wolf-635063.jpg
-&quot; alt=&quot;Big Bad Wolf..&quot; height=&quot;400&quot; width=&quot;500&quot;&gt;
+&quot; alt=&quot;Big Bad Wolf..&quot; height=&quot;320&quot; width=&quot;280&quot;&gt;
 
 [[Attack!]]
 
@@ -358,8 +358,115 @@ The problem is, if you try to start a life here, but are still wanted as a crimi
 You choose to:
 [[Go to the living areas]]
 [[Clear up your face and find out what happened.]]</tw-passagedata>
-<tw-passagedata pid="33" name="Go to the living areas" tags="" position="115,2548.3333333333335">Walking down the alleys of merchants selling their various products and items, no one seems to be paying much attention to you.</tw-passagedata>
-<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1948.3333333333335,2533.3333333333335"></tw-passagedata>
+<tw-passagedata pid="33" name="Go to the living areas" tags="" position="115,2548.3333333333335">Walking down the alleys of merchants selling their various products and items, no one seems to be paying much attention to you.
+
+You come to an intersection.
+
+[[Go shopping at the nearest merchant]]
+
+[[Continue down to the castle|Clear up your face and find out what happened.]]
+
+[[Find the nearest inn and rest.]]</tw-passagedata>
+<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335"></tw-passagedata>
+<tw-passagedata pid="35" name="Go shopping at the nearest merchant" tags="" position="935,2681.666666666667">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="36" name="Find the nearest inn and rest." tags="" position="695,2581.666666666667">Turning to your left, you notice a hanging sign that says &quot;The Sleeping Tree&quot;
+
+Do you go in?
+
+[[Go in the inn]]
+
+[[Actually, I&#39;ll go to the castle|Clear up your face and find out what happened.]]
+
+[[Actually, I&#39;ll go buy things at the merchant.|Go shopping at the nearest merchant]]</tw-passagedata>
+<tw-passagedata pid="37" name="Go in the inn" tags="" position="355,2953.3333333333335">As you step inside, glaring eyes turn to you for a couple seconds.
+They soon turn back to their activities, such as gambling or heavy drinking.
+
+You walk up to the person who seems to be in charge. They turn towards you with an open smile.
+&quot;Welcome to the Sleeping Tree! How may I help you?&quot;
+
+[[&quot;I&#39;d like to rent a room here.&quot;]]
+
+[[&quot;What kind of drinks do you have?&quot;]]
+
+[[&quot;Have you ever seen anyone who looked similar to me?&quot;]]
+
+[[Leave the inn]]
+
+</tw-passagedata>
+<tw-passagedata pid="38" name="&quot;What kind of drinks do you have?&quot;" tags="" position="343.33333333333337,3081.666666666667">The person smiles.
+&quot;Just the old regular ale. Would you like some? Ours is the freshest brewed in town, for only 3 gold a bottle.&quot;
+
+[[Yes please.]]
+
+[[Of course.|Yes please.]]
+
+[[&quot;I&#39;ll pass.&quot;]]</tw-passagedata>
+<tw-passagedata pid="39" name="Yes please." tags="" position="360,2810">&quot;Glad to see someone who appreciates our drinks.
+Here you go!&quot;
+
+(set: $gold = $gold - 3)
+(set: $ale = 1)
+You now have $gold gold.
+
+You now have $ale ale bottles.
+
+&quot;How else may I help you?&quot;
+
+[[&quot;I&#39;d like to rent a room here.&quot;]]
+
+[[&quot;What kind of drinks do you have?&quot;]]
+
+[[&quot;Have you ever seen anyone who looked similar to me?&quot;]]
+
+[[Leave the inn]]
+</tw-passagedata>
+<tw-passagedata pid="40" name="&quot;I&#39;ll pass.&quot;" tags="" position="223.33343333333335,2823.3333333333335">&quot;Oh. Ok.
+Can I help you with anything else?&quot;
+
+[[&quot;I&#39;d like to rent a room here.&quot;]] 
+
+[[&quot;Have you ever seen anyone who looked similar to me?&quot;]] 
+
+[[&quot;What kind of drinks do you have?&quot;]] 
+
+[[Leave the inn]] </tw-passagedata>
+<tw-passagedata pid="41" name="&quot;I&#39;d like to rent a room here.&quot;" tags="" position="38.333333333333336,2935">&quot;Great! We have a few left. It&#39;s 5 gold a room per night. Want to get one?&quot;
+
+[[&quot;Yes, I want a room.&quot;]]
+
+[[&quot;I&#39;ll pass.&quot;]] </tw-passagedata>
+<tw-passagedata pid="42" name="&quot;Have you ever seen anyone who looked similar to me?&quot;" tags="" position="230,2951.666666666667">&quot;No.. I don&#39;t think I have.&quot;
+
+&quot;How else may I help you?&quot;
+
+[[&quot;I&#39;d like to rent a room here.&quot;]]
+
+[[&quot;What kind of drinks do you have?&quot;]]
+
+[[&quot;Have you ever seen anyone who looked similar to me?&quot;]]
+
+[[Leave the inn]]
+</tw-passagedata>
+<tw-passagedata pid="43" name="Leave the inn" tags="" position="38.333333333333336,2810">You leave the in and go to the living areas.
+
+(display: &quot;Go to the living areas&quot;)</tw-passagedata>
+<tw-passagedata pid="44" name="&quot;Yes, I want a room.&quot;" tags="" position="35,3061.666666666667">
+(if: $gold &lt; 1)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 10) Here you go!
+(set: $room = 1) You have a room available for $room night.]
+
+(if: $room is 1)[ [[Go sleep]]]
+
+[[Leave the inn]] 
+</tw-passagedata>
+<tw-passagedata pid="45" name="Go sleep" tags="" position="198.33333333333334,3076.666666666667">(set: $maxhp = 15)
+(set: $room = $room - 1)
+(set: $hp = $maxhp)
+You have fully regenerated you health!
+
+You now have $room nights available to sleep.
+
+[[Leave the inn]] </tw-passagedata>
 </tw-storydata>
 
 
