@@ -131,7 +131,10 @@ You attack modifier is now: $ap
 
 [[Continue Walking|Continue1]]
 </tw-passagedata>
-<tw-passagedata pid="10" name="Continue1" tags="" position="491.0001,676.6666666666667">You continue walking along the path. Suddenly, a wolf pops out of a corner and manages to rip some of your clothing off. 
+<tw-passagedata pid="10" name="Continue1" tags="" position="491.0001,676.6666666666667">(if:(save-game:&quot;Slot A&quot;))[
+    //Game Progress has been saved.//
+  ]
+You continue walking along the path. Suddenly, a wolf pops out of a corner and manages to rip some of your clothing off. 
 You quickly respond to the threat and turn around, ready to fight.
 
 &#39;&#39;WOLF:&#39;&#39;
@@ -303,6 +306,8 @@ Your health is now: $hp
 As you leave the prison, you find a stash of 50 gold layinb about.
 You take the gold.
 
+(display: &quot;status&quot;)
+
 You also see a small lever. No obstacles are between you and outside.
 Do you pull the lever?
 
@@ -314,6 +319,9 @@ Do you pull the lever?
 [[Leave the prison]] </tw-passagedata>
 <tw-passagedata pid="28" name="WolfWin" tags="" position="786.6666666666667,878.3333333333334"> You have slain the monster! During this battle, you have learned to protect yourself better, and thus have gained a .5 defense modifier.
 (set: $dp = $dp + 0.5)
+
+(display: &quot;status&quot;)
+
 [[Head into the nearby castle]] </tw-passagedata>
 <tw-passagedata pid="29" name="lose" tags="" position="1098.5,2194.3333333333335">You lie dead on the cold floor.
 
@@ -368,8 +376,17 @@ You come to an intersection.
 
 [[Find the nearest inn and rest.]]</tw-passagedata>
 <tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335"></tw-passagedata>
-<tw-passagedata pid="35" name="Go shopping at the nearest merchant" tags="" position="935,2681.666666666667">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="36" name="Find the nearest inn and rest." tags="" position="695,2581.666666666667">Turning to your left, you notice a hanging sign that says &quot;The Sleeping Tree&quot;
+<tw-passagedata pid="35" name="Go shopping at the nearest merchant" tags="" position="935,2681.666666666667">To your right, you see a hall of merchants, selling various items from potions to armors to weapons.
+Which vendor interests you?
+
+[[Weapons dealer]]
+
+[[Armor Vendor]]
+
+[[Potion Vendor]]
+
+[[Misc vendor]]</tw-passagedata>
+<tw-passagedata pid="36" name="Find the nearest inn and rest." tags="" position="513.3333333333334,2651.666666666667">Turning to your left, you notice a hanging sign that says &quot;The Sleeping Tree&quot;
 
 Do you go in?
 
@@ -459,7 +476,7 @@ Can I help you with anything else?&quot;
 
 [[Leave the inn]] 
 </tw-passagedata>
-<tw-passagedata pid="45" name="Go sleep" tags="" position="198.33333333333334,3076.666666666667">(set: $maxhp = 15)
+<tw-passagedata pid="45" name="Go sleep" tags="" position="203.33333333333334,3125">(set: $maxhp = 15)
 (set: $room = $room - 1)
 (set: $hp = $maxhp)
 You have fully regenerated you health!
@@ -467,6 +484,38 @@ You have fully regenerated you health!
 You now have $room nights available to sleep.
 
 [[Leave the inn]] </tw-passagedata>
+<tw-passagedata pid="46" name="Weapons dealer" tags="" position="738.3333333333334,2808.3333333333335">&quot;Hello there. You seem like a young adventurer in need of some ways to protect yourself. Why don&#39;t you explore my shop?&quot;
+
+[[See the shop|Shop1]]
+
+[[Leave.]]</tw-passagedata>
+<tw-passagedata pid="47" name="Armor Vendor" tags="" position="985,2826.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1191.6666666666667,2835">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="49" name="Misc vendor" tags="" position="1385,2831.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="50" name="wip" tags="" position="836.6666666666667,2195">The rest of the story is still working in progress.
+
+Check http://www.github.com/delayel06/youarethehero for updates!
+</tw-passagedata>
+<tw-passagedata pid="51" name="Shop1" tags="" position="738.3333333333334,2958.3333333333335">Welcome to the weapon shop!
+
+Here are the choices for your class:
+(if: $class is 1)
+[[Steel Sword]] (+1 damage) -- 200 gold
+[[Metal Shield]] (+1 defense) -- 100 gold
+[[Soft Boots]] (+1 Sneak modifier, -1 Defense) -- 30 gold
+(elseif: $class is 2)</tw-passagedata>
+<tw-passagedata pid="52" name="Leave." tags="" position="888.3333333333334,2958.3333333333335">You leave and go the living areas.
+(display: &quot;Go to the living areas&quot;)</tw-passagedata>
+<tw-passagedata pid="53" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="54" name="Metal Shield" tags="" position="888.3333333333334,3108.3333333333335">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="55" name="Soft Boots" tags="" position="1038.3333333333335,3108.3333333333335">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="56" name="status" tags="" position="1098.5,1031">Your health is: $hp
+You maximum health is: $maxhp
+Your attack damage is: $ap
+Your defense points are: $dp
+You sneak modifier is: $gold
+Your gold is: $gold
+</tw-passagedata>
 </tw-storydata>
 
 
