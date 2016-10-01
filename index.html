@@ -156,6 +156,7 @@ The wolf attacks and causes $eap damage to you, although reduced by your $dp def
 Your health is now: $hp
 The wolf&#39;s health is now: $ehp
 (if: $ehp &lt; 1)[(goto: &quot;WolfWin&quot;)]
+(if: $hp &lt; 1)[(goto: &quot;lose&quot;)]
 [[Attack!]] 
 
 [[Run]] </tw-passagedata>
