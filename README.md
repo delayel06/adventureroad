@@ -15,7 +15,7 @@ The game is hosted by Github pages. You can find this site with the entirety of 
  
 # Questions
  
- Conatact me at delayel06@gmail.com for any quesitons
+ Conatact me for any quesitons
  Please contact me for any use of this work.
  
  
