@@ -5,7 +5,7 @@ This was developped using the Twine 2 software.
 Current Version: 0.0.3 -- This project is in alpha stage.
 
 # Update Frequency
-Check back everyday on this site for updates, as I will try to add updates at least every 2 day!
+Check back everyday on this site for updates, as I will try to add updates at least every 2 days!
 
 # Changes
 
