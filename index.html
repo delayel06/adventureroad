@@ -26,20 +26,23 @@ tw-sidebar tw-icon.undo {
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 </script><tw-passagedata pid="1" name="Start" tags="" position="480,4">{(if: (saved-games:) contains &quot;Slot A&quot;)[
 Load previous game?
-  (link: &quot;Load game&quot;)[(load-game:&quot;Slot A&quot;)]
+  (link: &quot;Load game&quot;)[(load-game:&quot;Slot A&quot;)
   &lt;br&gt;
- [[Start a new game|Starter]]
+ [[Start a new game|Starter]]]
 ]}
+
+(else:)[
 
 Welcome to the RetroRPG adenture game, where we bring back the joys of 						old retro text-based games!
 
 
 				
-					[[Start your adventure|Starter]]</tw-passagedata>
+					[[Start your adventure|Starter]]]</tw-passagedata>
 <tw-passagedata pid="2" name="Starter" tags="" position="499,181">(if: $Death is 1)[
 You are reborn from the ashes of a great hero...
 
 Your new life will be one of great honor.]
+(set: $maxhp = 15)
 
 You are a young adventurer.
 
@@ -127,7 +130,7 @@ You attack modifier is now: $ap
 
 [[Continue Walking|Continue1]]
 </tw-passagedata>
-<tw-passagedata pid="10" name="Continue1" tags="" position="491.0001,676.6666666666667">(if:(save-game:&quot;Slot A&quot;))[
+<tw-passagedata pid="10" name="Continue1" tags="" position="491.00019999999995,676.6666666666667">(if:(save-game:&quot;Slot A&quot;))[
     //Game Progress has been saved.//
   ]
 You continue walking along the path. Suddenly, a wolf pops out of a corner and manages to rip some of your clothing off. 
@@ -521,7 +524,8 @@ Here are the potions you can buy:
 Check http://www.github.com/delayel06/youarethehero for updates!
 
 Thank you so much for your contribution to this project!
-Please review the project using the above link.</tw-passagedata>
+
+Please contact me with ideas and reviews, as well as issues I may not have seen at: delayel06@gmail.com</tw-passagedata>
 <tw-passagedata pid="50" name="Shop1" tags="" position="720,2930">Welcome to the weapon shop!
 
 Here are the choices for your class:
@@ -647,7 +651,12 @@ The river you followed earlier is the same water floating under the drawbridge.
 [[Go inside the castle.]] </tw-passagedata>
 <tw-passagedata pid="65" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that server as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
 
-(display: &quot;wip&quot;)</tw-passagedata>
+You look around for a place where you should go.
+You find a small room labeled &quot;Security Office&quot;
+In this room are three dwarves that reach up to your knee. They are all writing things, using quills and what seems to be blue ink.
+
+(display: &quot;wip&quot;)
+</tw-passagedata>
 </tw-storydata>
 
 
