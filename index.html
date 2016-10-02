@@ -231,9 +231,9 @@ You can only take one
 (elseif: $class is 2)[(set: $mainwep = &quot;spells&quot;) Since you are a wizard, you choose the spellbook. With this, you learn an offensive spell, which adds &#39;&#39;+2&#39;&#39; to your damage modifier.(set: $ap = $ap + 2)]
 (elseif: $class is 3)[(set: $mainwep = &quot;Dagger&quot;) Since you are a thief, you choose to take the dagger. This adds &#39;&#39;+2&#39;&#39; to your damage modifier and &#39;&#39;+.5&#39;&#39; to your sneak modifier.(set: $ap = $ap + 2) (set: $ts = $ts + 0.5)]
 (else:)[ (set: $thingtaken1 to (either: &quot;sword&quot;, &quot;book&quot;)) Since you have no distinctive class, you choose to take the $thingtaken1.(if: $thingtaken is &quot;sword&quot;)[ (set: $class = 1)]
-(else:)[ (set: $class = 2)
+(if: $class is 3)[(set: $class = 2)]
 
-Your choices have changed what you now are.]]
+Your choices have changed what you now are.]
 
 [[Wait in the cell]]</tw-passagedata>
 <tw-passagedata pid="20" name="Wait in the cell" tags="" position="601.6666666666667,1386.6666666666667">(if: $ap &gt; 2)[ (set: $ap = $ap -1) From waiting in the cell so long, you lose an attack point.
