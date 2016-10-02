@@ -368,9 +368,12 @@ Farther to the north, across a bridge, you see the castle of the city, the place
 By going to where the people live, you can meet some of them and hope to start a life among them, or escape the city.
 The problem is, if you try to start a life here, but are still wanted as a criminal for some reason. By going to the castle, you can hope to talk to some officials to get that all cleared up.
 
-You choose to:
+(if: $story is 1)[ 
+[[Leave the city]] 
+[[Go to the living areas]]]
+(else:)[You choose to:
 [[Go to the living areas]]
-[[Clear up your face and find out what happened.]]</tw-passagedata>
+[[Clear up your face and find out what happened.]]]</tw-passagedata>
 <tw-passagedata pid="33" name="Go to the living areas" tags="" position="115,2548.3333333333335">Walking down the alleys of merchants selling their various products and items, no one seems to be paying much attention to you.
 (display: &quot;status&quot;)
 
@@ -540,7 +543,9 @@ Check http://www.github.com/delayel06/youarethehero for updates!
 
 Thank you so much for your contribution to this project!
 
-Please contact me with ideas and reviews, as well as issues I may not have seen at: delayel06@gmail.com</tw-passagedata>
+Please contact me with ideas and reviews, as well as issues I may not have seen at: delayel06@gmail.com
+
+For issues, go to the github page and under the &quot;Issues&quot; tab, create a new one.</tw-passagedata>
 <tw-passagedata pid="50" name="Leave." tags="" position="590,2795">You leave and go the living areas.
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
 <tw-passagedata pid="51" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">
@@ -651,6 +656,10 @@ The castle itself seems very old, although it seems like it was renovated not to
 
 The river you followed earlier is the same water floating under the drawbridge.
 
+Looking around, you find a stash of 20 gold.
+(set: $gold = $gold + 20)
+You now have $gold gold.
+
 [[Go inside the castle.]] </tw-passagedata>
 <tw-passagedata pid="64" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that server as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
 
@@ -660,14 +669,27 @@ In this room are three dwarves that reach up to your knee. They are all writing 
 
 [[Attack the dwarves]]
 
-[[Talk to the dwarves]]</tw-passagedata>
-<tw-passagedata pid="65" name="Attack the dwarves" tags="" position="1725,2838.3333333333335">With your $mainwep drawn, you slaughter the three dwarves, as they hold no challenge against you. One manages to scream right before you send your $mainwep at him. 
+[[Talk to the dwarves]]
+
+[[Leave the castle|LeaveCastleNow]]</tw-passagedata>
+<tw-passagedata pid="65" name="Attack the dwarves" tags="" position="1540,2611.666666666667">With your $mainwep drawn, you slaughter the three dwarves, as they hold no challenge against you. One manages to scream right before you send your $mainwep at him. 
 With that scream, three guards come rushing. These guards are not like the prison guards, as their armor and weapons are much more proficient.
 [[Run away from the guards]]
 
 [[Fight the guards!]]</tw-passagedata>
-<tw-passagedata pid="66" name="Talk to the dwarves" tags="" position="1985,2823.3333333333335">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="67" name="Run away from the guards" tags="" position="1641.6666666666667,2976.666666666667">You sheathe you $mainwep and make a run for it. You hear arrows dropping from the sky all around you.
+<tw-passagedata pid="66" name="Talk to the dwarves" tags="" position="1728.3333333333335,2820">The dwarves look up as you walk into the room.
+One of the dwarves, dressed in all blue, goes behind the counter and faces you.
+
+&quot;Hello there. Welcome to the security office. How may I help you?&quot;
+
+[[&quot;I think I was injustly imprisoned.&quot;]]
+
+[[&quot;Do you know anyone who looks like me?&quot;]]
+
+[[&quot;Never mind&quot;|Go inside the castle.]]
+
+</tw-passagedata>
+<tw-passagedata pid="67" name="Run away from the guards" tags="" position="1560,2756.666666666667">You sheathe you $mainwep and make a run for it. You hear arrows dropping from the sky all around you.
 As ou run from the arrows, one lands right in the back of your knee, halting you mid run.
 You try to take the arrow out, but in vain. It is tightly enclosed withing your bone.
 
@@ -675,7 +697,97 @@ The guards catch up to you and run their shiny sword down your spine.
 (set: $hp = &quot;brutally murdered&quot;)
 (display: &quot;status&quot;)
 (display: &quot;lose&quot;)</tw-passagedata>
-<tw-passagedata pid="68" name="Fight the guards!" tags="" position="1875,2988.3333333333335">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="68" name="Fight the guards!" tags="" position="1603.3333333333335,2821.666666666667">
+Guards (x7)
+Attack modifier: 3
+Defense modifier: 3
+Health: 15
+
+[[Run away from the guards]] 
+
+[[Attack them all!]]</tw-passagedata>
+<tw-passagedata pid="69" name="Attack them all!" tags="" position="1576.6666666666667,2946.666666666667">Your puny $ap damage modifier is no match for their combined 21.
+They form up a super attack, consisting of all of them charging at you with their weapons.
+
+You succumb to their assault.
+(set: $hp = &quot;Dog food&quot;)
+(display: &quot;status&quot;)
+
+(display: &quot;lose&quot;)</tw-passagedata>
+<tw-passagedata pid="70" name="&quot;I think I was injustly imprisoned.&quot;" tags="" position="1701.6666666666667,2975">&quot;You were? Well I don&#39;t think it was much of a problem because you&#39;re here right now aren--oh...&quot;
+The dwarf takes a few steps away from you.
+&quot;So you escaped huh?&quot;
+
+[[Yes.]]
+
+[[No.]]</tw-passagedata>
+<tw-passagedata pid="71" name="&quot;Do you know anyone who looks like me?&quot;" tags="" position="1878.3333333333335,2970">The dwarf studies you for a short amount of time.
+&quot;No, I don&#39;t think so... Why?&quot;
+
+[[&quot;I think I was injustly imprisoned.&quot;]] 
+
+[[&quot;Never mind&quot;|Go inside the castle.]]</tw-passagedata>
+<tw-passagedata pid="72" name="LeaveCastleNow" tags="" position="1966.6666666666667,2720">You decide to leave the castle. You walk out and go back to the place where you first started.
+(display: &quot;Outside!&quot;)</tw-passagedata>
+<tw-passagedata pid="73" name="Yes." tags="" position="1701.6666666666667,3125">&quot;You did huh? Well, as long as you don&#39;t cause any trouble, you should be fine. Now, what is this injustly imprisoned issue.. What happened?&quot;
+
+[[&quot;Guards said they knew who I was and brought me to the prison.&quot;]]</tw-passagedata>
+<tw-passagedata pid="74" name="No." tags="" position="1851.6666666666667,3125">The dwarf relaxes as the word leaves your mouth.
+
+&quot;Oh. Alright, then what is this thing about being injustly imprisoned... What happened?&quot;
+
+[[&quot;Guards said they knew who I was and brought me to the prison.&quot;]] </tw-passagedata>
+<tw-passagedata pid="75" name="&quot;Guards said they knew who I was and brought me to the prison.&quot;" tags="" position="1701.6666666666667,3275">&quot;Really? I see. Let me look for you in our database.&quot;
+
+[[&quot;My name is...&quot;]]</tw-passagedata>
+<tw-passagedata pid="76" name="&quot;My name is...&quot;" tags="" position="1546.6666666666667,3090">
+(set: $name to (prompt: &quot;Your name, please:&quot;))
+
+(if: $name is 0)[ //Since you did not choose a name, one will be picked for you.//
+(set: $name = &quot;John Doe&quot;)
+
+The dwarf turns back towards you after looking through an enormous book, labeled A17.
+
+&quot;Alright, $name, I didn&#39;t find you in this book. That means you haven&#39;t even been here before, so that nasty encounter with our pea-brained guards was an accident. Please don&#39;t tell them I said that.&quot;
+
+The dwarf tears out a page from the book, but the same page grows back immediately, word for word.
+
+&quot;Here is what I did find though.&quot;
+ He hands you the leaf of paper he tore out from the book.
+ &quot;This is very confidential information, you must know that. This here is someone who looks identical to you. It is very confidential because this person was a powerful, loyal servant to our kingdom of Shael. However, he never had enough power. He succumbed to the darkness and became a demonic prince. Not many people know of him, becaue his records were deemed dangeroud, and thus the citizens of Shael didn&#39;t have access to it.&quot;
+ [[&quot;Why did you tell me this then?&quot;]]</tw-passagedata>
+<tw-passagedata pid="77" name="&quot;Why did you tell me this then?&quot;" tags="" position="1541.6666666666667,3276.666666666667">The dwarf uneasily shifts around in place.
+
+&quot;I-I know I wasn&#39;t supposed to tell you this, but I believe it is for your own good for you to know this, as you will have to face it your entire life.&quot;
+
+[[&quot;What did he do to this place?&quot;]]</tw-passagedata>
+<tw-passagedata pid="78" name="&quot;What did he do to this place?&quot;" tags="" position="1541.6666666666667,3426.666666666667">&quot;He completely destroyed it. He was bored one day, and this city was on his path. With one swipe of the hand, and razed the entire city, apart from the castle. It took us 50 years to fix this up. The guards that attacked you were most likely children during that period, scarred by his ravaging.&quot;
+
+[[&quot;I&#39;ll leave now&quot;]]
+
+[[&quot;So.. He&#39;s very old then?&quot;]]</tw-passagedata>
+<tw-passagedata pid="79" name="&quot;I&#39;ll leave now&quot;" tags="" position="1395,3076.666666666667">&quot;Alright. Be sure to pass by the living areas and stock up on items before leaving, or anything else you might do there. Be wary on your adventures, my friend.&quot;
+
+You stash the paper he gave you in your bag. You don&#39;t know where this adventure will take you next, but with this new knowledge, hope that this issue will be resolved. You can&#39;t help but wonder, why do you and him look exactly alike? No one seems to have the answer to this.
+
+You walk out of the castle, back to where you broke out of the prison.
+(set: $story = 1)
+(display: &quot;Outside!&quot;)</tw-passagedata>
+<tw-passagedata pid="80" name="&quot;So.. He&#39;s very old then?&quot;" tags="" position="2003.3334333333335,2923.3333333333335">&quot;The power he gained by switching to the darkness was enough for him to become immortal to time. The only way he can die now is for someone to defeat him in combat. But no one is good enough for that, I&#39;m afraid.&quot;
+
+[[&quot;I&#39;ll leave now&quot;]] 
+
+[[&quot;What is his name?&quot;]]</tw-passagedata>
+<tw-passagedata pid="81" name="&quot;What is his name?&quot;" tags="" position="2008.3333333333335,3065">&quot;No one knows his real name apart from him. We refer to him as Bane however, because, well, that&#39;s what he is.&quot;
+
+[[&quot;I&#39;ll leave now&quot;]] </tw-passagedata>
+<tw-passagedata pid="82" name="Leave the city" tags="" position="785,3460">(if:(save-game:&quot;Slot A&quot;))[
+    //Game Progress has been saved.//
+  ]
+  
+You have completed the introduction to the stoory of Shael! Feel free to restart with another character, or wait for me to release the rest.
+
+(display: &quot;wip&quot;)</tw-passagedata>
 </tw-storydata>
 
 
