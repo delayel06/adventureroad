@@ -11,12 +11,11 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="You Are The Hero -- A RPG where your choices define the story" startnode="1" creator="Twine" creator-version="2.0.11" ifid="DA1686DD-74DC-4B67-8296-7B333D9DA34C" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html {
-  /* Vertical colour gradient */
-  background-image: linear-gradient(to bottom,  white, lightblue);
-  background-image: -webkit-linear-gradient(top,  white, lightblue);
-  background-attachment: fixed;
-
+<tw-storydata name="You Are The Hero -- A RPG where your choices define the story" startnode="1" creator="Twine" creator-version="2.0.11" ifid="DA1686DD-74DC-4B67-8296-7B333D9DA34C" format="Harlowe" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+  body { background-image: [img[bg]]; }
+	
+	
+	
 }
 tw-passage {
 	font-family: Verdana, Arial, sans-serif;
@@ -178,7 +177,9 @@ You follow the old path, all the way up to a magnificent castle, fully made of s
 
 [[Go through the front gate]]
 
-[[Try to sneak in]]</tw-passagedata>
+[[Try to sneak in]]
+
+[[I don&#39;t want to go to this place.]]</tw-passagedata>
 <tw-passagedata pid="14" name="Go through the front gate" tags="" position="375,1110">As you walk up to the guards at the front gate, they squint at you and whisper to each other.
 
 &quot;Hey you! You thought you could come back here without any problems huh? Well here&#39;s a change of plans, kiddo.&quot;
@@ -188,7 +189,7 @@ You follow the old path, all the way up to a magnificent castle, fully made of s
 The guard grabs you, before handcuffing you. You try to resist, but a hard blow in the back of the head knocks you out cold.
 
 [[To the prison]] </tw-passagedata>
-<tw-passagedata pid="15" name="Try to sneak in" tags="" position="631.6666666666667,1103.3333333333335">As you try to climb the stones on the wall of the castle, a guard sees you.
+<tw-passagedata pid="15" name="Try to sneak in" tags="" position="710,1061.6666666666667">As you try to climb the stones on the wall of the castle, a guard sees you.
 
 &quot;What the hell are you doing?&quot;
 
@@ -197,10 +198,13 @@ The guard grabs you, before handcuffing you. You try to resist, but a hard blow 
 [[I came here to kill everyone here.]]</tw-passagedata>
 <tw-passagedata pid="16" name="&quot;I lost a ball up here.." tags="" position="631.6666666666667,1253.3333333333335">&quot;You did huh? And I&#39;m the king of this place. Off to the prison with you.&quot;
 
+(display: &quot;iknowu&quot;)
 The guard grabs you, before handcuffing you. You try to resist, but a hard blow in the back of the head knocks you out cold.
 
 [[To the prison]]</tw-passagedata>
 <tw-passagedata pid="17" name="I came here to kill everyone here." tags="" position="781.6666666666667,1253.3333333333335">&quot;Wrong answer, buddy.&quot;
+
+(display: &quot;iknowu&quot;)
 
 The guard grabs you, before handcuffing you. You try to resist, but a hard blow in the back of the head knocks you out cold.
 
@@ -367,6 +371,7 @@ You choose to:
 [[Go to the living areas]]
 [[Clear up your face and find out what happened.]]</tw-passagedata>
 <tw-passagedata pid="33" name="Go to the living areas" tags="" position="115,2548.3333333333335">Walking down the alleys of merchants selling their various products and items, no one seems to be paying much attention to you.
+(display: &quot;status&quot;)
 
 You come to an intersection.
 
@@ -385,7 +390,7 @@ Which vendor interests you?
 
 [[Potion Vendor]]
 
-[[Misc vendor]]</tw-passagedata>
+</tw-passagedata>
 <tw-passagedata pid="36" name="Find the nearest inn and rest." tags="" position="513.3333333333334,2651.666666666667">Turning to your left, you notice a hanging sign that says &quot;The Sleeping Tree&quot;
 
 Do you go in?
@@ -484,38 +489,129 @@ You have fully regenerated you health!
 You now have $room nights available to sleep.
 
 [[Leave the inn]] </tw-passagedata>
-<tw-passagedata pid="46" name="Weapons dealer" tags="" position="738.3333333333334,2808.3333333333335">&quot;Hello there. You seem like a young adventurer in need of some ways to protect yourself. Why don&#39;t you explore my shop?&quot;
+<tw-passagedata pid="46" name="Weapons dealer" tags="" position="745,2766.666666666667">&quot;Hello there. You seem like a young adventurer in need of some ways to protect yourself. Why don&#39;t you explore my shop?&quot;
 
 [[See the shop|Shop1]]
 
 [[Leave.]]</tw-passagedata>
-<tw-passagedata pid="47" name="Armor Vendor" tags="" position="985,2826.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
-<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1191.6666666666667,2835">(display: &quot;wip&quot;)</tw-passagedata>
-<tw-passagedata pid="49" name="Misc vendor" tags="" position="1385,2831.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
-<tw-passagedata pid="50" name="wip" tags="" position="836.6666666666667,2195">The rest of the story is still working in progress.
+<tw-passagedata pid="47" name="Armor Vendor" tags="" position="981.6666666666667,2828.3333333333335">&quot;Welcome to my shop!&quot;
+
+Here is the armor available for your class:
+(if: $class is 1 or 3)[
+[[Simple Leather Armor]] -- 50 gold
+]
+(elseif: $class is 2)[
+[[Simple mage robes]] -- 50 gold
+]
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1191.6666666666667,2835"></tw-passagedata>
+<tw-passagedata pid="49" name="wip" tags="" position="836.6666666666667,2195">The rest of the story is still working in progress.
 
 Check http://www.github.com/delayel06/youarethehero for updates!
-</tw-passagedata>
-<tw-passagedata pid="51" name="Shop1" tags="" position="738.3333333333334,2958.3333333333335">Welcome to the weapon shop!
+
+Thank you so much for your contribution to this project!
+Please review the project using the above link.</tw-passagedata>
+<tw-passagedata pid="50" name="Shop1" tags="" position="720,2930">Welcome to the weapon shop!
 
 Here are the choices for your class:
-(if: $class is 1)
+(if: $class is 1)[
 [[Steel Sword]] (+1 damage) -- 200 gold
 [[Metal Shield]] (+1 defense) -- 100 gold
-[[Soft Boots]] (+1 Sneak modifier, -1 Defense) -- 30 gold
-(elseif: $class is 2)</tw-passagedata>
-<tw-passagedata pid="52" name="Leave." tags="" position="888.3333333333334,2958.3333333333335">You leave and go the living areas.
+]
+(elseif: $class is 2)[
+[[Arcane Staff]] (+1 damage) -- 200 gold
+[[Ward spell]] (+1 defense) -- 100 gold
+]
+(elseif: $class is 3)[
+[[Bronze daggers]] (+1.5 damage) -- 150 gold
+]
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="51" name="Leave." tags="" position="590,2795">You leave and go the living areas.
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
-<tw-passagedata pid="53" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="54" name="Metal Shield" tags="" position="888.3333333333334,3108.3333333333335">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="55" name="Soft Boots" tags="" position="1038.3333333333335,3108.3333333333335">Double-click this passage to edit it.</tw-passagedata>
-<tw-passagedata pid="56" name="status" tags="" position="1098.5,1031">Your health is: $hp
+<tw-passagedata pid="52" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">
+(if: $gold &lt; 200)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 200) Here you go!
+(set: $weplvl = 1)
+(set: $mainwep = &quot;Steel Sword&quot;)
+(set: $ap = $ap + 1)]
+
+
+Your new damage is $ap.
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="53" name="Metal Shield" tags="" position="913.3334333333335,3150">
+(if: $gold &lt; 100)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 100) Here you go!
+
+(set: $dp = $dp + 1)]
+
+Your new defense is $dp.
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="54" name="status" tags="" position="1098.5,1031">Your health is: $hp
 You maximum health is: $maxhp
 Your attack damage is: $ap
 Your defense points are: $dp
 You sneak modifier is: $gold
 Your gold is: $gold
 </tw-passagedata>
+<tw-passagedata pid="55" name="Arcane Staff" tags="" position="613.3333333333334,3108.3333333333335">
+(if: $gold &lt; 200)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 200) Here you go!
+(set: $mainwep = &quot;Arcane Staff&quot;)
+(set: $ap = $ap + 1)
+(set: $weplvl = 1)]
+
+Your new damage is $ap.
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="56" name="Ward spell" tags="" position="788.3336333333334,3121.666666666667">
+(if: $gold &lt; 100)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 100) Here you go!
+
+(set: $dp = $dp + 1)]
+
+Your new defense is $dp.
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="57" name="Bronze daggers" tags="" position="1038.3334333333335,3125">
+(if: $gold &lt; 150)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 150) Here you go!
+(set: $mainwep = &quot;Bronze Dagger&quot;)
+(set: $weplvl = 1)
+(set: $ap = $ap + 1.5)]
+
+Your new damage is $ap.
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="58" name="iknowu" tags="" position="1098.5,906">Wait a second... I know you! You thought you could get away with getting back in this castle? 
+Change of plans.</tw-passagedata>
+<tw-passagedata pid="59" name="I don&#39;t want to go to this place." tags="" position="561.6666666666667,1090">You have a bad feeling about this place. As you turn around and start walking the opposit way, you hear the sounds of hooves charging behind you. Suddenly, knights in full metal armor come up to you, their sword up to your neck.
+
+&quot;Halt! You thought we wouldn&#39;t recognize you, after everything you&#39;ve done? Time to see if you like my prison.&quot;
+
+And with that, the guards knocks you out with a somber expression.
+
+[[To the prison]] </tw-passagedata>
+<tw-passagedata pid="60" name="Simple Leather Armor" tags="" position="981.6666666666667,2978.3333333333335">
+(if: $gold &lt; 50)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 50) Here you go!
+(set: $dp = $dp + 1)
+(set: $armorlvl = 1)
+Your defense modifier is now: $dp]
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="61" name="Simple mage robes" tags="" position="1131.6666666666667,2978.3333333333335">
+(if: $gold &lt; 50)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 50) Here you go!
+(set: $dp = $dp + 1)
+(set: $armorlvl = 1)
+Your new defense modifier is now: $dp
+]
+
+[[Leave.]] </tw-passagedata>
 </tw-storydata>
 
 
