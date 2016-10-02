@@ -26,9 +26,9 @@ tw-sidebar tw-icon.undo {
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 </script><tw-passagedata pid="1" name="Start" tags="" position="480,4">{(if: (saved-games:) contains &quot;Slot A&quot;)[
 Load previous game?
-  (link: &quot;Load game&quot;)[(load-game:&quot;Slot A&quot;)
+  (link: &quot;Load game&quot;)[(load-game:&quot;Slot A&quot;)]
   &lt;br&gt;
- [[Start a new game|Starter]]]
+ [[Start a new game|Starter]]
 ]}
 
 (else:)[
@@ -226,9 +226,10 @@ These items are:
 //A spellbook//
 //A dagger//
 You can only take one
-(if: $class is 1)[ Since you are a warrior, you choose to take the sword. This adds &#39;&#39;+1&#39;&#39; to both your damage modifier and your defense modifier(set: $ap = $ap + 1) (set: $dp = $dp + 1)]
-(elseif: $class is 2)[ Since you are a wizard, you choose the spellbook. With this, you learn an offensive spell, which adds &#39;&#39;+2&#39;&#39; to your damage modifier.(set: $ap = $ap + 2)]
-(elseif: $class is 3)[ Since you are a thief, you choose to take the dagger. This adds &#39;&#39;+2&#39;&#39; to your damage modifier and &#39;&#39;+.5&#39;&#39; to your sneak modifier.(set: $ap = $ap + 2) (set: $ts = $ts + 0.5)]
+
+(if: $class is 1)[(set: $mainwep = &quot;Sword&quot;) Since you are a warrior, you choose to take the sword. This adds &#39;&#39;+1&#39;&#39; to both your damage modifier and your defense modifier(set: $ap = $ap + 1) (set: $dp = $dp + 1)]
+(elseif: $class is 2)[(set: $mainwep = &quot;spells&quot;) Since you are a wizard, you choose the spellbook. With this, you learn an offensive spell, which adds &#39;&#39;+2&#39;&#39; to your damage modifier.(set: $ap = $ap + 2)]
+(elseif: $class is 3)[(set: $mainwep = &quot;Dagger&quot;) Since you are a thief, you choose to take the dagger. This adds &#39;&#39;+2&#39;&#39; to your damage modifier and &#39;&#39;+.5&#39;&#39; to your sneak modifier.(set: $ap = $ap + 2) (set: $ts = $ts + 0.5)]
 (else:)[ (set: $thingtaken1 to (either: &quot;sword&quot;, &quot;book&quot;)) Since you have no distinctive class, you choose to take the $thingtaken1.(if: $thingtaken is &quot;sword&quot;)[ (set: $class = 1)]
 (else:)[ (set: $class = 2)
 
@@ -333,8 +334,8 @@ Your journey has ended.
 (set: $Death = 1)
 
 
-Restart [[Starter]] </tw-passagedata>
-<tw-passagedata pid="30" name="Of course. I want to take my chances." tags="" position="403,2289">You pull the lever. Nothing happens.
+[[Restart|Start]] </tw-passagedata>
+<tw-passagedata pid="30" name="Of course. I want to take my chances." tags="" position="403,2289">You push the lever. Nothing happens.
 
 You then realize you are supposed to pull on the lever.
 
@@ -380,7 +381,10 @@ You come to an intersection.
 [[Continue down to the castle|Clear up your face and find out what happened.]]
 
 [[Find the nearest inn and rest.]]</tw-passagedata>
-<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335">Walking down the river, all the way up to the majestic castle, with its 4 magnificent towers. The banner, a blue lion over a white background, dominates the walls of the castle.
+<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335">(if:(save-game:&quot;Slot A&quot;))[
+    //Game Progress has been saved.//
+  ]
+Walking down the river, all the way up to the majestic castle, with its 4 magnificent towers, you pay close attention to your surroundings. The banner, a blue lion over a white background, dominates the walls of the castle.
 A drawbridge is now standing between you and the main part of the marvelous structure. You subtly walk around, observing the guards, observing if they are on the lookout for you.
 Guards are now staring at you, most likely wondering why you are pacing aroung in front of the castle.
 [[Observe more of the guards and the castle.]]
@@ -423,12 +427,12 @@ You walk up to the person who seems to be in charge. They turn towards you with 
 <tw-passagedata pid="38" name="&quot;What kind of drinks do you have?&quot;" tags="" position="343.33333333333337,3081.666666666667">The person smiles.
 &quot;Just the old regular ale. Would you like some? Ours is the freshest brewed in town, for only 3 gold a bottle.&quot;
 
-[[Yes please.]]
+[[&quot;Yes please.&quot;]]
 
-[[Of course.|Yes please.]]
+[[&quot;Of course.&quot;|&quot;Yes please.&quot;]]
 
 [[&quot;I&#39;ll pass.&quot;]]</tw-passagedata>
-<tw-passagedata pid="39" name="Yes please." tags="" position="360,2810">&quot;Glad to see someone who appreciates our drinks.
+<tw-passagedata pid="39" name="&quot;Yes please.&quot;" tags="" position="360,2810">&quot;Glad to see someone who appreciates our drinks.
 Here you go!&quot;
 
 (set: $gold = $gold - 3)
@@ -494,22 +498,33 @@ You have fully regenerated you health!
 You now have $room nights available to sleep.
 
 [[Leave the inn]] </tw-passagedata>
-<tw-passagedata pid="46" name="Weapons dealer" tags="" position="745,2766.666666666667">&quot;Hello there. You seem like a young adventurer in need of some ways to protect yourself. Why don&#39;t you explore my shop?&quot;
+<tw-passagedata pid="46" name="Weapons dealer" tags="" position="745,2766.666666666667">Welcome to the weapon shop!
 
-[[See the shop|Shop1]]
+Here are the choices for your class:
+(if: $class is 1)[
+[[Steel Sword]] (+1 damage) -- 200 gold
+[[Metal Shield]] (+1 defense) -- 100 gold
+]
+(elseif: $class is 2)[
+[[Arcane Staff]] (+1 damage) -- 200 gold
+[[Ward spell]] (+1 defense) -- 100 gold
+]
+(elseif: $class is 3)[
+[[Bronze daggers]] (+1.5 damage) -- 150 gold
+]
 
-[[Leave.]]</tw-passagedata>
+[[Leave.]] </tw-passagedata>
 <tw-passagedata pid="47" name="Armor Vendor" tags="" position="981.6666666666667,2828.3333333333335">&quot;Welcome to my shop!&quot;
 
 Here is the armor available for your class:
 (if: $class is 1)[
-[[Simple Leather Armor]] -- 50 gold
+[[Simple Leather Armor]] (+1 defense, -1 sneak)-- 50 gold
 ]
 (if: $class is 3)[
-[[Simple Leather Armor]] -- 50 gold
+[[Simple Leather Armor]] (+1 defense, -1 sneak) -- 50 gold
 ]
 (elseif: $class is 2)[
-[[Simple mage robes]] -- 50 gold
+[[Simple mage robes]] (+1 defense) -- 50 gold
 ]
 
 [[Leave.]] </tw-passagedata>
@@ -526,25 +541,9 @@ Check http://www.github.com/delayel06/youarethehero for updates!
 Thank you so much for your contribution to this project!
 
 Please contact me with ideas and reviews, as well as issues I may not have seen at: delayel06@gmail.com</tw-passagedata>
-<tw-passagedata pid="50" name="Shop1" tags="" position="720,2930">Welcome to the weapon shop!
-
-Here are the choices for your class:
-(if: $class is 1)[
-[[Steel Sword]] (+1 damage) -- 200 gold
-[[Metal Shield]] (+1 defense) -- 100 gold
-]
-(elseif: $class is 2)[
-[[Arcane Staff]] (+1 damage) -- 200 gold
-[[Ward spell]] (+1 defense) -- 100 gold
-]
-(elseif: $class is 3)[
-[[Bronze daggers]] (+1.5 damage) -- 150 gold
-]
-
-[[Leave.]] </tw-passagedata>
-<tw-passagedata pid="51" name="Leave." tags="" position="590,2795">You leave and go the living areas.
+<tw-passagedata pid="50" name="Leave." tags="" position="590,2795">You leave and go the living areas.
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
-<tw-passagedata pid="52" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">
+<tw-passagedata pid="51" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">
 (if: $gold &lt; 200)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 200) Here you go!
 (set: $weplvl = 1)
@@ -555,7 +554,7 @@ Here are the choices for your class:
 Your new damage is $ap.
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="53" name="Metal Shield" tags="" position="913.3334333333335,3150">
+<tw-passagedata pid="52" name="Metal Shield" tags="" position="913.3334333333335,3150">
 (if: $gold &lt; 100)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 100) Here you go!
 
@@ -564,14 +563,14 @@ Your new damage is $ap.
 Your new defense is $dp.
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="54" name="status" tags="" position="1098.5,1031">Your health is: $hp
+<tw-passagedata pid="53" name="status" tags="" position="1098.5,1031">Your health is: $hp
 You maximum health is: $maxhp
 Your attack damage is: $ap
 Your defense points are: $dp
-You sneak modifier is: $gold
+You sneak modifier is: $ts
 Your gold is: $gold
 </tw-passagedata>
-<tw-passagedata pid="55" name="Arcane Staff" tags="" position="613.3333333333334,3108.3333333333335">
+<tw-passagedata pid="54" name="Arcane Staff" tags="" position="613.3333333333334,3108.3333333333335">
 (if: $gold &lt; 200)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 200) Here you go!
 (set: $mainwep = &quot;Arcane Staff&quot;)
@@ -581,7 +580,7 @@ Your gold is: $gold
 Your new damage is $ap.
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="56" name="Ward spell" tags="" position="788.3336333333334,3121.666666666667">
+<tw-passagedata pid="55" name="Ward spell" tags="" position="788.3336333333334,3121.666666666667">
 (if: $gold &lt; 100)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 100) Here you go!
 
@@ -590,7 +589,7 @@ Your new damage is $ap.
 Your new defense is $dp.
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="57" name="Bronze daggers" tags="" position="1038.3334333333335,3125">
+<tw-passagedata pid="56" name="Bronze daggers" tags="" position="1038.3334333333335,3125">
 (if: $gold &lt; 150)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 150) Here you go!
 (set: $mainwep = &quot;Bronze Dagger&quot;)
@@ -600,24 +599,28 @@ Your new defense is $dp.
 Your new damage is $ap.
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="58" name="iknowu" tags="" position="1098.5,906">Wait a second... I know you! You thought you could get away with getting back in this castle? 
+<tw-passagedata pid="57" name="iknowu" tags="" position="1098.5,906">Wait a second... I know you! You thought you could get away with getting back in this castle? 
 Change of plans.</tw-passagedata>
-<tw-passagedata pid="59" name="I don&#39;t want to go to this place." tags="" position="561.6666666666667,1090">You have a bad feeling about this place. As you turn around and start walking the opposit way, you hear the sounds of hooves charging behind you. Suddenly, knights in full metal armor come up to you, their sword up to your neck.
+<tw-passagedata pid="58" name="I don&#39;t want to go to this place." tags="" position="561.6666666666667,1090">You have a bad feeling about this place. As you turn around and start walking the opposit way, you hear the sounds of hooves charging behind you. Suddenly, knights in full metal armor come up to you, their sword up to your neck.
 
 &quot;Halt! You thought we wouldn&#39;t recognize you, after everything you&#39;ve done? Time to see if you like my prison.&quot;
 
 And with that, the guards knocks you out with a somber expression.
 
 [[To the prison]] </tw-passagedata>
-<tw-passagedata pid="60" name="Simple Leather Armor" tags="" position="986.6666666666667,2968.3333333333335">
+<tw-passagedata pid="59" name="Simple Leather Armor" tags="" position="986.6666666666667,2968.3333333333335">
 (if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 (set: $dp = $dp + 1)
+(set: $ts = $ts - 1)
+(if: $ts &lt; 0)[(set: $ts = 0)
 
-Your defense modifier is now: $dp]
+Your defense modifier is now: $dp
+Your sneak modifier is now: $ts
+]]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="61" name="Simple mage robes" tags="" position="1131.6666666666667,2978.3333333333335">
+<tw-passagedata pid="60" name="Simple mage robes" tags="" position="1131.6666666666667,2978.3333333333335">
 (if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 (set: $dp = $dp + 1)
@@ -626,21 +629,21 @@ Your new defense modifier is now: $dp
 ]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="62" name="Buy potion of health" tags="" position="1256.6667666666667,2955">(if: $gold &lt; 50)[ You don&#39;t have enough money!]
+<tw-passagedata pid="61" name="Buy potion of health" tags="" position="1256.6667666666667,2955">(if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 You have bought a potion of +5 maximum health.
 (set: $maxhp = 20)
 You maximum health is now $maxhp.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="63" name="Buy potion of damage" tags="" position="1381.6666666666667,2928.3333333333335">(if: $gold &lt; 75)[ You don&#39;t have enough money!]
+<tw-passagedata pid="62" name="Buy potion of damage" tags="" position="1381.6666666666667,2928.3333333333335">(if: $gold &lt; 75)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 75) Here you go!
 You have bought a potion of +5 maximum health.
 (set: $ap = $ap + .5)
 Your damage is now $ap.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="64" name="Observe more of the guards and the castle." tags="" position="1685,2673.3333333333335">You decide to stop pacing around and take a close look at the guards.
+<tw-passagedata pid="63" name="Observe more of the guards and the castle." tags="" position="1685,2673.3333333333335">You decide to stop pacing around and take a close look at the guards.
 They are wearing an emblem splattered on their chest, the emblem of the castle.
 Their armor seems much superior to yours, and so do their weapons. There seems to be a dozen guards roaming around the entrance. There is no possible way that you can fight them all and win.
 
@@ -649,14 +652,30 @@ The castle itself seems very old, although it seems like it was renovated not to
 The river you followed earlier is the same water floating under the drawbridge.
 
 [[Go inside the castle.]] </tw-passagedata>
-<tw-passagedata pid="65" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that server as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
+<tw-passagedata pid="64" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that server as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
 
 You look around for a place where you should go.
 You find a small room labeled &quot;Security Office&quot;
 In this room are three dwarves that reach up to your knee. They are all writing things, using quills and what seems to be blue ink.
 
-(display: &quot;wip&quot;)
-</tw-passagedata>
+[[Attack the dwarves]]
+
+[[Talk to the dwarves]]</tw-passagedata>
+<tw-passagedata pid="65" name="Attack the dwarves" tags="" position="1725,2838.3333333333335">With your $mainwep drawn, you slaughter the three dwarves, as they hold no challenge against you. One manages to scream right before you send your $mainwep at him. 
+With that scream, three guards come rushing. These guards are not like the prison guards, as their armor and weapons are much more proficient.
+[[Run away from the guards]]
+
+[[Fight the guards!]]</tw-passagedata>
+<tw-passagedata pid="66" name="Talk to the dwarves" tags="" position="1985,2823.3333333333335">Double-click this passage to edit it.</tw-passagedata>
+<tw-passagedata pid="67" name="Run away from the guards" tags="" position="1641.6666666666667,2976.666666666667">You sheathe you $mainwep and make a run for it. You hear arrows dropping from the sky all around you.
+As ou run from the arrows, one lands right in the back of your knee, halting you mid run.
+You try to take the arrow out, but in vain. It is tightly enclosed withing your bone.
+
+The guards catch up to you and run their shiny sword down your spine.
+(set: $hp = &quot;brutally murdered&quot;)
+(display: &quot;status&quot;)
+(display: &quot;lose&quot;)</tw-passagedata>
+<tw-passagedata pid="68" name="Fight the guards!" tags="" position="1875,2988.3333333333335">Double-click this passage to edit it.</tw-passagedata>
 </tw-storydata>
 
 
