@@ -33,7 +33,7 @@ Load previous game?
 
 (else:)[
 
-Welcome to the RetroRPG adenture game, where we bring back the joys of 						old retro text-based games!
+Welcome to the RetroRPG adventure game, where we bring back the joys of 						old retro text-based games!
 
 
 				
@@ -87,7 +87,7 @@ You are now ready to [[continue your story.]] </tw-passagedata>
 (set: $ts = 2)
 (set: $class = 3)
 
-Now I remember. You are a thief from the city of Kallihan. Your childhood forged you to be this way, and now you embrace it. You are a master of locks, as well as striking from the shadows. Relying on your element of surprise, you choose to neglect the effets of armor, as they slow you down.
+Now I remember. You are a thief from the city of Kallihan. Your childhood forged you to be this way, and now you embrace it. You are a master of locks, as well as striking from the shadows. Relying on your element of surprise, you choose to neglect the effects of armor, as they slow you down.
 
 Your attack modifier is now: $ap
 Your defense modifier is now: $dp
@@ -220,7 +220,7 @@ You are then led inside a cell.
 
 
 [[This is pretty bad]]</tw-passagedata>
-<tw-passagedata pid="19" name="This is pretty bad" tags="" position="464,1392">In your tight cell, you find three items, most likely left by their preivous owners.
+<tw-passagedata pid="19" name="This is pretty bad" tags="" position="464,1392">In your tight cell, you find three items, most likely left by their previous owners.
 These items are:
 //A sword//
 //A spellbook//
@@ -245,14 +245,14 @@ Your attack modifier is now: $ap]
 <tw-passagedata pid="21" name="Think up an escape plan" tags="" position="520,1584">You are tired of waiting in the cell. For hours, you use your brains to think up of a way to escape. You could either tell the guards you are not who they think you are, but why should they believe that. You need something.... better.
 
 [[Sneak out]]</tw-passagedata>
-<tw-passagedata pid="22" name="Sneak out" tags="" position="520,1734">(set: $eap = 2)
+<tw-passagedata pid="22" name="Sneak out" tags="" position="518.3333333333334,1733.3333333333335">(set: $eap = 2)
 (set: $edp = 1)
 (set: $ehp = 5)
 (set: $eap1 = 2)
 (set: $edp1 = 1)
 (set: $ehp1 = 5)
 
-At lunchtime, a guard walks up to your cell. As he opens the gate to give you your drugged food to keep you calm, you knock him in the head, knocking him out.
+At lunchtime, a guard walks up to your cell. As he opens the gate to give you your drugged food to keep you calm, you hit him in the head, knocking him out.
 
 You then walk out of the cell, while locking it behind you.
 
@@ -308,7 +308,7 @@ Your health is now: $hp
 [[Attack Them!]] </tw-passagedata>
 <tw-passagedata pid="26" name="Leave the prison" tags="" position="403.33333333333337,2125">You exit the prison through a series of doors that lead outside.
 (set: $gold = 50)
-As you leave the prison, you find a stash of 50 gold laying about.
+As you leave the prison, you find a stash of 50 gold lying about.
 You take the gold.
 
 (display: &quot;status&quot;)
@@ -389,7 +389,7 @@ You come to an intersection.
   ]
 Walking down the river, all the way up to the majestic castle, with its 4 magnificent towers, you pay close attention to your surroundings. The banner, a blue lion over a white background, dominates the walls of the castle.
 A drawbridge is now standing between you and the main part of the marvelous structure. You subtly walk around, observing the guards, observing if they are on the lookout for you.
-Guards are now staring at you, most likely wondering why you are pacing aroung in front of the castle.
+Guards are now staring at you, most likely wondering why you are pacing around in front of the castle.
 [[Observe more of the guards and the castle.]]
 
 [[Go inside the castle.]]</tw-passagedata>
@@ -569,10 +569,10 @@ Your new defense is $dp.]
 
 [[Leave.]] </tw-passagedata>
 <tw-passagedata pid="53" name="status" tags="" position="1098.5,1031">Your health is: $hp
-You maximum health is: $maxhp
+Your maximum health is: $maxhp
 Your attack damage is: $ap
 Your defense points are: $dp
-You sneak modifier is: $ts
+Your sneak modifier is: $ts
 Your gold is: $gold
 </tw-passagedata>
 <tw-passagedata pid="54" name="Arcane Staff" tags="" position="613.3333333333334,3108.3333333333335">
@@ -638,7 +638,7 @@ Your new defense modifier is now: $dp
 (else:)[(set: $gold = $gold - 50) Here you go!
 You have bought a potion of +5 maximum health.
 (set: $maxhp = 20)
-You maximum health is now $maxhp.]
+Your maximum health is now $maxhp.]
 
 [[Leave.]] </tw-passagedata>
 <tw-passagedata pid="62" name="Buy potion of damage" tags="" position="1381.6666666666667,2928.3333333333335">(if: $gold &lt; 75)[ You don&#39;t have enough money!]
@@ -661,7 +661,7 @@ Looking around, you find a stash of 20 gold.
 You now have $gold gold.
 
 [[Go inside the castle.]] </tw-passagedata>
-<tw-passagedata pid="64" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that server as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
+<tw-passagedata pid="64" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that serve as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
 
 You look around for a place where you should go.
 You find a small room labeled &quot;Security Office&quot;
@@ -682,7 +682,7 @@ One of the dwarves, dressed in all blue, goes behind the counter and faces you.
 
 &quot;Hello there. Welcome to the security office. How may I help you?&quot;
 
-[[&quot;I think I was injustly imprisoned.&quot;]]
+[[&quot;I think I was unjustly imprisoned.&quot;]]
 
 [[&quot;Do you know anyone who looks like me?&quot;]]
 
@@ -690,8 +690,8 @@ One of the dwarves, dressed in all blue, goes behind the counter and faces you.
 
 </tw-passagedata>
 <tw-passagedata pid="67" name="Run away from the guards" tags="" position="1560,2756.666666666667">You sheathe you $mainwep and make a run for it. You hear arrows dropping from the sky all around you.
-As ou run from the arrows, one lands right in the back of your knee, halting you mid run.
-You try to take the arrow out, but in vain. It is tightly enclosed withing your bone.
+As you run from the arrows, one lands right in the back of your knee, halting you mid run.
+You try to take the arrow out, but in vain. It is tightly enclosed within your bone.
 
 The guards catch up to you and run their shiny sword down your spine.
 (set: $hp = &quot;brutally murdered&quot;)
@@ -714,7 +714,7 @@ You succumb to their assault.
 (display: &quot;status&quot;)
 
 (display: &quot;lose&quot;)</tw-passagedata>
-<tw-passagedata pid="70" name="&quot;I think I was injustly imprisoned.&quot;" tags="" position="1701.6666666666667,2975">&quot;You were? Well I don&#39;t think it was much of a problem because you&#39;re here right now aren--oh...&quot;
+<tw-passagedata pid="70" name="&quot;I think I was unjustly imprisoned.&quot;" tags="" position="1701.6666666666667,2975">&quot;You were? Well I don&#39;t think it was much of a problem because you&#39;re here right now aren--oh...&quot;
 The dwarf takes a few steps away from you.
 &quot;So you escaped huh?&quot;
 
@@ -724,17 +724,17 @@ The dwarf takes a few steps away from you.
 <tw-passagedata pid="71" name="&quot;Do you know anyone who looks like me?&quot;" tags="" position="1878.3333333333335,2970">The dwarf studies you for a short amount of time.
 &quot;No, I don&#39;t think so... Why?&quot;
 
-[[&quot;I think I was injustly imprisoned.&quot;]] 
+[[&quot;I think I was unjustly imprisoned.&quot;]] 
 
 [[&quot;Never mind&quot;|Go inside the castle.]]</tw-passagedata>
 <tw-passagedata pid="72" name="LeaveCastleNow" tags="" position="1966.6666666666667,2720">You decide to leave the castle. You walk out and go back to the place where you first started.
 (display: &quot;Outside!&quot;)</tw-passagedata>
-<tw-passagedata pid="73" name="Yes." tags="" position="1701.6666666666667,3125">&quot;You did huh? Well, as long as you don&#39;t cause any trouble, you should be fine. Now, what is this injustly imprisoned issue.. What happened?&quot;
+<tw-passagedata pid="73" name="Yes." tags="" position="1701.6666666666667,3125">&quot;You did huh? Well, as long as you don&#39;t cause any trouble, you should be fine. Now, what is this unjustly imprisoned issue.. What happened?&quot;
 
 [[&quot;Guards said they knew who I was and brought me to the prison.&quot;]]</tw-passagedata>
 <tw-passagedata pid="74" name="No." tags="" position="1851.6666666666667,3125">The dwarf relaxes as the word leaves your mouth.
 
-&quot;Oh. Alright, then what is this thing about being injustly imprisoned... What happened?&quot;
+&quot;Oh. Alright, then what is this thing about being unjustly imprisoned... What happened?&quot;
 
 [[&quot;Guards said they knew who I was and brought me to the prison.&quot;]] </tw-passagedata>
 <tw-passagedata pid="75" name="&quot;Guards said they knew who I was and brought me to the prison.&quot;" tags="" position="1701.6666666666667,3275">&quot;Really? I see. Let me look for you in our database.&quot;
@@ -754,8 +754,9 @@ The dwarf tears out a page from the book, but the same page grows back immediate
 
 &quot;Here is what I did find though.&quot;
  He hands you the leaf of paper he tore out from the book.
- &quot;This is very confidential information, you must know that. This here is someone who looks identical to you. It is very confidential because this person was a powerful, loyal servant to our kingdom of Shael. However, he never had enough power. He succumbed to the darkness and became a demonic prince. Not many people know of him, becaue his records were deemed dangeroud, and thus the citizens of Shael didn&#39;t have access to it.&quot;
- [[&quot;Why did you tell me this then?&quot;]]</tw-passagedata>
+ &quot;This is very confidential information, you must know that. This here is someone who looks identical to you. It is very confidential because this person was a powerful, loyal servant to our kingdom of Shael. However, he never had enough power. He succumbed to the darkness and became a demonic prince. Not many people know of him, because his records were deemed dangerous, and thus the citizens of Shael didn&#39;t have access to it.&quot;
+ [[&quot;Why did you tell me this then?&quot;]]
+</tw-passagedata>
 <tw-passagedata pid="77" name="&quot;Why did you tell me this then?&quot;" tags="" position="1541.6666666666667,3276.666666666667">The dwarf uneasily shifts around in place.
 
 &quot;I-I know I wasn&#39;t supposed to tell you this, but I believe it is for your own good for you to know this, as you will have to face it your entire life.&quot;
