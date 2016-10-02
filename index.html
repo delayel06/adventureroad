@@ -377,7 +377,12 @@ You come to an intersection.
 [[Continue down to the castle|Clear up your face and find out what happened.]]
 
 [[Find the nearest inn and rest.]]</tw-passagedata>
-<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335"></tw-passagedata>
+<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335">Walking down the river, all the way up to the majestic castle, with its 4 magnificent towers. The banner, a blue lion over a white background, dominates the walls of the castle.
+A drawbridge is now standing between you and the main part of the marvelous structure. You subtly walk around, observing the guards, observing if they are on the lookout for you.
+Guards are now staring at you, most likely wondering why you are pacing aroung in front of the castle.
+[[Observe more of the guards and the castle.]]
+
+[[Go inside the castle.]]</tw-passagedata>
 <tw-passagedata pid="35" name="Go shopping at the nearest merchant" tags="" position="935,2681.666666666667">To your right, you see a hall of merchants, selling various items from potions to armors to weapons.
 Which vendor interests you?
 
@@ -502,7 +507,12 @@ Here is the armor available for your class:
 ]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1191.6666666666667,2835"></tw-passagedata>
+<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1225,2781.666666666667">&quot;Welcome to my shop!&quot;
+
+Here are the potions you can buy:
+
+[[Buy potion of health]] (Will give +5  maximum health) -- 50 gold
+[[Buy potion of damage]] (will give permanent +.5 damage) -- 75 gold</tw-passagedata>
 <tw-passagedata pid="49" name="wip" tags="" position="836.6666666666667,2195">The rest of the story is still working in progress.
 
 Check http://www.github.com/delayel06/youarethehero for updates!
@@ -592,11 +602,11 @@ Change of plans.</tw-passagedata>
 And with that, the guards knocks you out with a somber expression.
 
 [[To the prison]] </tw-passagedata>
-<tw-passagedata pid="60" name="Simple Leather Armor" tags="" position="981.6666666666667,2978.3333333333335">
+<tw-passagedata pid="60" name="Simple Leather Armor" tags="" position="986.6666666666667,2968.3333333333335">
 (if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 (set: $dp = $dp + 1)
-(set: $armorlvl = 1)
+
 Your defense modifier is now: $dp]
 
 [[Leave.]] </tw-passagedata>
@@ -609,6 +619,32 @@ Your new defense modifier is now: $dp
 ]
 
 [[Leave.]] </tw-passagedata>
+<tw-passagedata pid="62" name="Buy potion of health" tags="" position="1256.6667666666667,2955">(if: $gold &lt; 50)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 50) Here you go!
+You have bought a potion of +5 maximum health.
+(set: $maxhp = 20)
+You maximum health is now $maxhp.]
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="63" name="Buy potion of damage" tags="" position="1381.6666666666667,2928.3333333333335">(if: $gold &lt; 75)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 75) Here you go!
+You have bought a potion of +5 maximum health.
+(set: $ap = $ap + .5)
+Your damage is now $ap.]
+
+[[Leave.]] </tw-passagedata>
+<tw-passagedata pid="64" name="Observe more of the guards and the castle." tags="" position="1685,2673.3333333333335">You decide to stop pacing around and take a close look at the guards.
+They are wearing an emblem splattered on their chest, the emblem of the castle.
+Their armor seems much superior to yours, and so do their weapons. There seems to be a dozen guards roaming around the entrance. There is no possible way that you can fight them all and win.
+
+The castle itself seems very old, although it seems like it was renovated not too long ago. Some of the stones are deteriorated and have green moss growing on top of it.
+
+The river you followed earlier is the same water floating under the drawbridge.
+
+[[Go inside the castle.]] </tw-passagedata>
+<tw-passagedata pid="65" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that server as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
+
+(display: &quot;wip&quot;)</tw-passagedata>
 </tw-storydata>
 
 
