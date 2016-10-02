@@ -2,7 +2,7 @@
 
 This was developped using the Twine 2 software.
 
-Current Version: 0.0.3 -- story is not close to being done
+Current Version: 0.0.3 -- This project is in alpha stage.
 
 # Changes
 
