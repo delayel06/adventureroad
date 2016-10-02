@@ -302,9 +302,9 @@ Your health is now: $hp
 (if: $hp &lt; 1)[(goto: &quot;lose&quot;)]
 
 [[Attack Them!]] </tw-passagedata>
-<tw-passagedata pid="26" name="Leave the prison" tags="" position="403,2139">You exit the prison through a series of doors that lead outside.
+<tw-passagedata pid="26" name="Leave the prison" tags="" position="403.33333333333337,2125">You exit the prison through a series of doors that lead outside.
 (set: $gold = 50)
-As you leave the prison, you find a stash of 50 gold layinb about.
+As you leave the prison, you find a stash of 50 gold laying about.
 You take the gold.
 
 (display: &quot;status&quot;)
@@ -499,7 +499,10 @@ You now have $room nights available to sleep.
 <tw-passagedata pid="47" name="Armor Vendor" tags="" position="981.6666666666667,2828.3333333333335">&quot;Welcome to my shop!&quot;
 
 Here is the armor available for your class:
-(if: $class is 1 or 3)[
+(if: $class is 1)[
+[[Simple Leather Armor]] -- 50 gold
+]
+(if: $class is 3)[
 [[Simple Leather Armor]] -- 50 gold
 ]
 (elseif: $class is 2)[
