@@ -23,10 +23,12 @@ tw-sidebar tw-icon.redo {
 tw-sidebar tw-icon.undo {
 	display: none;
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="Start" tags="" position="480,4">{(if: (saved-games:) contains &quot;Slot A&quot;)[
+
+</script><tw-passagedata pid="1" name="Start" tags="" position="480,4">{(if: (saved-games:) contains &quot;Slot B&quot;)[
 Load previous game?
-  (link: &quot;Load game&quot;)[(load-game:&quot;Slot A&quot;)]
+  (link: &quot;Load game&quot;)[(load-game:&quot;Slot B&quot;)]
   &lt;br&gt;
  [[Start a new game|Starter]]
 ]}
@@ -82,7 +84,7 @@ Your defense modifier is now: $dp
 Your sneak modifier is now: $ts
 
 You are now ready to [[continue your story.]] </tw-passagedata>
-<tw-passagedata pid="5" name="I am a thief" tags="" position="578.3333333333334,316.6666666666667">(set: $ap = 1)
+<tw-passagedata pid="5" name="I am a thief" tags="" position="578,316">(set: $ap = 1)
 (set: $dp = 0)
 (set: $ts = 2)
 (set: $class = 3)
@@ -114,7 +116,7 @@ Walking down a narrow dirt path out in the middle of nowhere, you stumble into a
 [[Pick it up.]]
 
 [[Leave it be. What could a stick do for me?]]</tw-passagedata>
-<tw-passagedata pid="8" name="Pick it up." tags="" position="366.0001,575">You decide to pick up the wooden stick, and place it neatly inside of your bag.
+<tw-passagedata pid="8" name="Pick it up." tags="" position="366,575">You decide to pick up the wooden stick, and place it neatly inside of your bag.
 (set:$eap = 1)
 (set:$edp = 0)
 (set:$ehp = 4)
@@ -123,14 +125,14 @@ You notice that this stick is quite sturdy and can be used as a weapon.
 You attack modifier is now: $ap
 
 [[Continue Walking|Continue1]]</tw-passagedata>
-<tw-passagedata pid="9" name="Leave it be. What could a stick do for me?" tags="" position="616.0001,573">You&#39;re probably right. This stick won&#39;t do anything for you. You leave it behind and move on.
+<tw-passagedata pid="9" name="Leave it be. What could a stick do for me?" tags="" position="616,573">You&#39;re probably right. This stick won&#39;t do anything for you. You leave it behind and move on.
 (set:$eap = 1)
 (set:$edp = 0)
 (set:$ehp = 4)
 
 [[Continue Walking|Continue1]]
 </tw-passagedata>
-<tw-passagedata pid="10" name="Continue1" tags="" position="491.00019999999995,676.6666666666667">(if:(save-game:&quot;Slot A&quot;))[
+<tw-passagedata pid="10" name="Continue1" tags="" position="491,676">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]
 You continue walking along the path. Suddenly, a wolf pops out of a corner and manages to rip some of your clothing off. 
@@ -147,7 +149,7 @@ Health: $ehp
 
 [[Run]]
 </tw-passagedata>
-<tw-passagedata pid="11" name="Attack!" tags="" position="348.33333333333337,826.6666666666667">
+<tw-passagedata pid="11" name="Attack!" tags="" position="348,826">
 (set: $ehp = $ehp - $ap)
 (set: $hp = $hp + $dp - $eap)
 You lash out at the wolf, dealing $ap damage to it.
@@ -162,7 +164,7 @@ The wolf&#39;s health is now: $ehp
 [[Attack!]] 
 
 [[Run]] </tw-passagedata>
-<tw-passagedata pid="12" name="Run" tags="" position="611.6666666666667,816.6666666666667">(set: $hp = $hp - 1)
+<tw-passagedata pid="12" name="Run" tags="" position="611,816">(set: $hp = $hp - 1)
 (if: $ts &gt; 0)[ //Sneak Skill Success// 
 You successfully run away from the wolf, although it lashes out at you right before you leave. You lose $eap health
 
@@ -172,7 +174,7 @@ You successfully run away from the wolf, although it lashes out at you right bef
 You aren&#39;t agile enough to run away! The wolf lashes out at you and causes $eap damage to you.
 
 [[Attack!]] ]</tw-passagedata>
-<tw-passagedata pid="13" name="Head into the nearby castle" tags="" position="481.6666666666667,953.3333333333334">(set: $gold = 100)
+<tw-passagedata pid="13" name="Head into the nearby castle" tags="" position="481,953">(set: $gold = 100)
 You follow the old path, all the way up to a magnificent castle, fully made of stones, as well as guards everywhere.
 
 [[Go through the front gate]]
@@ -189,27 +191,27 @@ You follow the old path, all the way up to a magnificent castle, fully made of s
 The guard grabs you, before handcuffing you. You try to resist, but a hard blow in the back of the head knocks you out cold.
 
 [[To the prison]] </tw-passagedata>
-<tw-passagedata pid="15" name="Try to sneak in" tags="" position="710,1061.6666666666667">As you try to climb the stones on the wall of the castle, a guard sees you.
+<tw-passagedata pid="15" name="Try to sneak in" tags="" position="710,1061">As you try to climb the stones on the wall of the castle, a guard sees you.
 
 &quot;What the hell are you doing?&quot;
 
 [[&quot;I lost a ball up here..]]
 
 [[I came here to kill everyone here.]]</tw-passagedata>
-<tw-passagedata pid="16" name="&quot;I lost a ball up here.." tags="" position="631.6666666666667,1253.3333333333335">&quot;You did huh? And I&#39;m the king of this place. Off to the prison with you.&quot;
+<tw-passagedata pid="16" name="&quot;I lost a ball up here.." tags="" position="631,1253">&quot;You did huh? And I&#39;m the king of this place. Off to the prison with you.&quot;
 
 (display: &quot;iknowu&quot;)
 The guard grabs you, before handcuffing you. You try to resist, but a hard blow in the back of the head knocks you out cold.
 
 [[To the prison]]</tw-passagedata>
-<tw-passagedata pid="17" name="I came here to kill everyone here." tags="" position="781.6666666666667,1253.3333333333335">&quot;Wrong answer, buddy.&quot;
+<tw-passagedata pid="17" name="I came here to kill everyone here." tags="" position="781,1253">&quot;Wrong answer, buddy.&quot;
 
 (display: &quot;iknowu&quot;)
 
 The guard grabs you, before handcuffing you. You try to resist, but a hard blow in the back of the head knocks you out cold.
 
 [[To the prison]] </tw-passagedata>
-<tw-passagedata pid="18" name="To the prison" tags="" position="468.33333333333337,1245">
+<tw-passagedata pid="18" name="To the prison" tags="" position="468,1245">
 When you wake up, you are in complete darkness. You feel the cold wood beneath you, while your hands are tightly tied behind your back.
 
 After a while, light floods you as the drape of a cart is lifted. You are in the castle, although not in the best position possible: the prison.
@@ -236,7 +238,7 @@ You can only take one
 Your choices have changed what you now are.]
 
 [[Wait in the cell]]</tw-passagedata>
-<tw-passagedata pid="20" name="Wait in the cell" tags="" position="601.6666666666667,1386.6666666666667">(if: $ap &gt; 2)[ (set: $ap = $ap -1) From waiting in the cell so long, you lose an attack point.
+<tw-passagedata pid="20" name="Wait in the cell" tags="" position="601,1386">(if: $ap &gt; 2)[ (set: $ap = $ap -1) From waiting in the cell so long, you lose an attack point.
 Your attack modifier is now: $ap]
 (else:)[ You wait in the cells for days... No one is coming to get you...]
 
@@ -245,7 +247,7 @@ Your attack modifier is now: $ap]
 <tw-passagedata pid="21" name="Think up an escape plan" tags="" position="520,1584">You are tired of waiting in the cell. For hours, you use your brains to think up of a way to escape. You could either tell the guards you are not who they think you are, but why should they believe that. You need something.... better.
 
 [[Sneak out]]</tw-passagedata>
-<tw-passagedata pid="22" name="Sneak out" tags="" position="518.3333333333334,1733.3333333333335">(set: $eap = 2)
+<tw-passagedata pid="22" name="Sneak out" tags="" position="518,1733">(set: $eap = 2)
 (set: $edp = 1)
 (set: $ehp = 5)
 (set: $eap1 = 2)
@@ -274,7 +276,7 @@ Guard defense modifier: $edp1
 Guard health points: $ehp1
 
 [[Attack Them!]]</tw-passagedata>
-<tw-passagedata pid="24" name="Sneak away" tags="" position="668.3334333333333,1884">(if: $ts &gt; 1)[ //Sneak skill success//
+<tw-passagedata pid="24" name="Sneak away" tags="" position="668,1884">(if: $ts &gt; 1)[ //Sneak skill success//
 
 You sneak away from the guards, hiding in the shadows so none of them see you. 
 [[Leave the prison]] 
@@ -283,7 +285,7 @@ You sneak away from the guards, hiding in the shadows so none of them see you.
 
 As you try to sneak away, the guards hear you and come rushing towards you. The option left is to [[Fight them]] ]
 </tw-passagedata>
-<tw-passagedata pid="25" name="Attack Them!" tags="" position="400,1988.3333333333335">
+<tw-passagedata pid="25" name="Attack Them!" tags="" position="400,1988">
 
 
 (set: $strikephrase to (either: &quot;You strike both of the guards successively.&quot;, &quot;With your new weapon, you hit both of the guards&quot;, &quot;The guards stagger as you hit them.&quot;))
@@ -306,7 +308,7 @@ Your health is now: $hp
 (if: $hp &lt; 1)[(goto: &quot;lose&quot;)]
 
 [[Attack Them!]] </tw-passagedata>
-<tw-passagedata pid="26" name="Leave the prison" tags="" position="403.33333333333337,2125">You exit the prison through a series of doors that lead outside.
+<tw-passagedata pid="26" name="Leave the prison" tags="" position="403,2125">You exit the prison through a series of doors that lead outside.
 (set: $gold = 50)
 As you leave the prison, you find a stash of 50 gold lying about.
 You take the gold.
@@ -319,16 +321,16 @@ Do you pull the lever?
 [[Of course. I want to take my chances.]]
 
 [[No! Why endanger myself when I could just leave?]]</tw-passagedata>
-<tw-passagedata pid="27" name="win" tags="" position="618.3333333333334,2009">You have killed the guards!
+<tw-passagedata pid="27" name="win" tags="" position="618,2009">You have killed the guards!
 
 [[Leave the prison]] </tw-passagedata>
-<tw-passagedata pid="28" name="WolfWin" tags="" position="786.6666666666667,878.3333333333334"> You have slain the monster! During this battle, you have learned to protect yourself better, and thus have gained a .5 defense modifier.
+<tw-passagedata pid="28" name="WolfWin" tags="" position="786,878"> You have slain the monster! During this battle, you have learned to protect yourself better, and thus have gained a .5 defense modifier.
 (set: $dp = $dp + 0.5)
 
 (display: &quot;status&quot;)
 
 [[Head into the nearby castle]] </tw-passagedata>
-<tw-passagedata pid="29" name="lose" tags="" position="1098.5,2194.3333333333335">You lie dead on the cold floor.
+<tw-passagedata pid="29" name="lose" tags="" position="1098,2194">You lie dead on the cold floor.
 
 Your journey has ended.
 (set: $Death = 1)
@@ -351,11 +353,9 @@ Your defense modifier is now $dp
  
 [[Outside!]]
 </tw-passagedata>
-<tw-passagedata pid="31" name="No! Why endanger myself when I could just leave?" tags="" position="553,2289">You decide not to pull the lever. Attached through a series of strings to the lever, you see up above you on the ceiling a bucket of what seems to be acid.
-You are glad you didn&#39;t pull the lever.
-
+<tw-passagedata pid="31" name="No! Why endanger myself when I could just leave?" tags="" position="553,2289">You decide not to pull the lever. You continue on out of the prison.
 [[Outside!]] </tw-passagedata>
-<tw-passagedata pid="32" name="Outside!" tags="" position="913.3333333333334,2460">(if:(save-game:&quot;Slot A&quot;))[
+<tw-passagedata pid="32" name="Outside!" tags="" position="913,2460">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]
 
@@ -363,7 +363,7 @@ You step outside through the double wooden gates that are on your path, and obse
 
 The prison is on the high part of the city, giving you a perfect aerial view of it. 
 To your direct right, you see what seems to be people in their homes.
-Farther to the north, across a bridge, you see the castle of the city, the palace.
+Farther to the north, across a bridge, you see the castle of the city, the place.
 
 By going to where the people live, you can meet some of them and hope to start a life among them, or escape the city.
 The problem is, if you try to start a life here, but are still wanted as a criminal for some reason. By going to the castle, you can hope to talk to some officials to get that all cleared up.
@@ -374,17 +374,25 @@ The problem is, if you try to start a life here, but are still wanted as a crimi
 (else:)[You choose to:
 [[Go to the living areas]]
 [[Clear up your face and find out what happened.]]]</tw-passagedata>
-<tw-passagedata pid="33" name="Go to the living areas" tags="" position="115,2548.3333333333335">Walking down the alleys of merchants selling their various products and items, no one seems to be paying much attention to you.
+<tw-passagedata pid="33" name="Go to the living areas" tags="" position="115,2548">Walking down the alleys of merchants selling their various products and items, no one seems to be paying much attention to you.
 (display: &quot;status&quot;)
 
 You come to an intersection.
+(if: $story is 1)[
+
+[[Go shopping at the nearest merchant]]
+
+[[Leave the city]] 
+
+[[Find the nearest inn and rest.]]]
+(else:)[
 
 [[Go shopping at the nearest merchant]]
 
 [[Continue down to the castle|Clear up your face and find out what happened.]]
 
-[[Find the nearest inn and rest.]]</tw-passagedata>
-<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523.3333333333335">(if:(save-game:&quot;Slot A&quot;))[
+[[Find the nearest inn and rest.]]]</tw-passagedata>
+<tw-passagedata pid="34" name="Clear up your face and find out what happened." tags="" position="1685,2523">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]
 Walking down the river, all the way up to the majestic castle, with its 4 magnificent towers, you pay close attention to your surroundings. The banner, a blue lion over a white background, dominates the walls of the castle.
@@ -393,7 +401,7 @@ Guards are now staring at you, most likely wondering why you are pacing around i
 [[Observe more of the guards and the castle.]]
 
 [[Go inside the castle.]]</tw-passagedata>
-<tw-passagedata pid="35" name="Go shopping at the nearest merchant" tags="" position="935,2681.666666666667">To your right, you see a hall of merchants, selling various items from potions to armors to weapons.
+<tw-passagedata pid="35" name="Go shopping at the nearest merchant" tags="" position="935,2681">To your right, you see a hall of merchants, selling various items from potions to armors to weapons.
 Which vendor interests you?
 
 [[Weapons dealer]]
@@ -403,7 +411,7 @@ Which vendor interests you?
 [[Potion Vendor]]
 
 </tw-passagedata>
-<tw-passagedata pid="36" name="Find the nearest inn and rest." tags="" position="513.3333333333334,2651.666666666667">Turning to your left, you notice a hanging sign that says &quot;The Sleeping Tree&quot;
+<tw-passagedata pid="36" name="Find the nearest inn and rest." tags="" position="513,2651">Turning to your left, you notice a hanging sign that says &quot;The Sleeping Tree&quot;
 
 Do you go in?
 
@@ -412,7 +420,7 @@ Do you go in?
 [[Actually, I&#39;ll go to the castle|Clear up your face and find out what happened.]]
 
 [[Actually, I&#39;ll go buy things at the merchant.|Go shopping at the nearest merchant]]</tw-passagedata>
-<tw-passagedata pid="37" name="Go in the inn" tags="" position="355,2953.3333333333335">As you step inside, glaring eyes turn to you for a couple seconds.
+<tw-passagedata pid="37" name="Go in the inn" tags="" position="355,2953">As you step inside, glaring eyes turn to you for a couple seconds.
 They soon turn back to their activities, such as gambling or heavy drinking.
 
 You walk up to the person who seems to be in charge. They turn towards you with an open smile.
@@ -427,7 +435,7 @@ You walk up to the person who seems to be in charge. They turn towards you with 
 [[Leave the inn]]
 
 </tw-passagedata>
-<tw-passagedata pid="38" name="&quot;What kind of drinks do you have?&quot;" tags="" position="343.33333333333337,3081.666666666667">The person smiles.
+<tw-passagedata pid="38" name="&quot;What kind of drinks do you have?&quot;" tags="" position="343,3081">The person smiles.
 &quot;Just the old regular ale. Would you like some? Ours is the freshest brewed in town, for only 3 gold a bottle.&quot;
 
 [[&quot;Yes please.&quot;]]
@@ -437,12 +445,13 @@ You walk up to the person who seems to be in charge. They turn towards you with 
 [[&quot;I&#39;ll pass.&quot;]]</tw-passagedata>
 <tw-passagedata pid="39" name="&quot;Yes please.&quot;" tags="" position="360,2810">&quot;Glad to see someone who appreciates our drinks.
 Here you go!&quot;
-
+(if: $gold &lt; 3)[You don&#39;t have enough money!]
+(else:)[
 (set: $gold = $gold - 3)
 (set: $ale = 1)
 You now have $gold gold.
 
-You now have $ale ale bottles.
+You now have $ale ale bottles.]
 
 &quot;How else may I help you?&quot;
 
@@ -454,7 +463,7 @@ You now have $ale ale bottles.
 
 [[Leave the inn]]
 </tw-passagedata>
-<tw-passagedata pid="40" name="&quot;I&#39;ll pass.&quot;" tags="" position="223.33343333333335,2823.3333333333335">&quot;Oh. Ok.
+<tw-passagedata pid="40" name="&quot;I&#39;ll pass.&quot;" tags="" position="223,2823">&quot;Oh. Ok.
 Can I help you with anything else?&quot;
 
 [[&quot;I&#39;d like to rent a room here.&quot;]] 
@@ -464,12 +473,12 @@ Can I help you with anything else?&quot;
 [[&quot;What kind of drinks do you have?&quot;]] 
 
 [[Leave the inn]] </tw-passagedata>
-<tw-passagedata pid="41" name="&quot;I&#39;d like to rent a room here.&quot;" tags="" position="38.333333333333336,2935">&quot;Great! We have a few left. It&#39;s 5 gold a room per night. Want to get one?&quot;
+<tw-passagedata pid="41" name="&quot;I&#39;d like to rent a room here.&quot;" tags="" position="38,2935">&quot;Great! We have a few left. It&#39;s 5 gold a room per night. Want to get one?&quot;
 
 [[&quot;Yes, I want a room.&quot;]]
 
 [[&quot;I&#39;ll pass.&quot;]] </tw-passagedata>
-<tw-passagedata pid="42" name="&quot;Have you ever seen anyone who looked similar to me?&quot;" tags="" position="230,2951.666666666667">&quot;No.. I don&#39;t think I have.&quot;
+<tw-passagedata pid="42" name="&quot;Have you ever seen anyone who looked similar to me?&quot;" tags="" position="230,2951">&quot;No.. I don&#39;t think I have.&quot;
 
 &quot;How else may I help you?&quot;
 
@@ -481,11 +490,11 @@ Can I help you with anything else?&quot;
 
 [[Leave the inn]]
 </tw-passagedata>
-<tw-passagedata pid="43" name="Leave the inn" tags="" position="38.333333333333336,2810">You leave the in and go to the living areas.
+<tw-passagedata pid="43" name="Leave the inn" tags="" position="38,2810">You leave the in and go to the living areas.
 
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
-<tw-passagedata pid="44" name="&quot;Yes, I want a room.&quot;" tags="" position="35,3061.666666666667">
-(if: $gold &lt; 1)[ You don&#39;t have enough money!]
+<tw-passagedata pid="44" name="&quot;Yes, I want a room.&quot;" tags="" position="35,3061">
+(if: $gold &lt; 10)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 10) Here you go!
 (set: $room = 1) You have a room available for $room night.]
 
@@ -493,7 +502,7 @@ Can I help you with anything else?&quot;
 
 [[Leave the inn]] 
 </tw-passagedata>
-<tw-passagedata pid="45" name="Go sleep" tags="" position="203.33333333333334,3125">(set: $maxhp = 15)
+<tw-passagedata pid="45" name="Go sleep" tags="" position="203,3125">(set: $maxhp = 15)
 (set: $room = $room - 1)
 (set: $hp = $maxhp)
 You have fully regenerated you health!
@@ -501,7 +510,7 @@ You have fully regenerated you health!
 You now have $room nights available to sleep.
 
 [[Leave the inn]] </tw-passagedata>
-<tw-passagedata pid="46" name="Weapons dealer" tags="" position="745,2766.666666666667">Welcome to the weapon shop!
+<tw-passagedata pid="46" name="Weapons dealer" tags="" position="745,2766">Welcome to the weapon shop!
 
 Here are the choices for your class:
 (if: $class is 1)[
@@ -517,7 +526,7 @@ Here are the choices for your class:
 ]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="47" name="Armor Vendor" tags="" position="981.6666666666667,2828.3333333333335">&quot;Welcome to my shop!&quot;
+<tw-passagedata pid="47" name="Armor Vendor" tags="" position="981,2828">&quot;Welcome to my shop!&quot;
 
 Here is the armor available for your class:
 (if: $class is 1)[
@@ -531,13 +540,13 @@ Here is the armor available for your class:
 ]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1225,2781.666666666667">&quot;Welcome to my shop!&quot;
+<tw-passagedata pid="48" name="Potion Vendor" tags="" position="1225,2781">&quot;Welcome to my shop!&quot;
 
 Here are the potions you can buy:
 
 [[Buy potion of health]] (Will give +5  maximum health) -- 50 gold
 [[Buy potion of damage]] (will give permanent +.5 damage) -- 75 gold</tw-passagedata>
-<tw-passagedata pid="49" name="wip" tags="" position="836.6666666666667,2195">The rest of the story is still working in progress.
+<tw-passagedata pid="49" name="wip" tags="" position="836,2195">The rest of the story is still working in progress.
 
 Check http://www.github.com/delayel06/youarethehero for updates!
 
@@ -548,7 +557,7 @@ Please contact me with ideas and reviews, as well as issues I may not have seen 
 For issues, go to the github page and under the &quot;Issues&quot; tab, create a new one.</tw-passagedata>
 <tw-passagedata pid="50" name="Leave." tags="" position="590,2795">You leave and go the living areas.
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
-<tw-passagedata pid="51" name="Steel Sword" tags="" position="738.3333333333334,3108.3333333333335">
+<tw-passagedata pid="51" name="Steel Sword" tags="" position="738,3108">
 (if: $gold &lt; 200)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 200) Here you go!
 (set: $weplvl = 1)
@@ -559,7 +568,7 @@ For issues, go to the github page and under the &quot;Issues&quot; tab, create a
 Your new damage is $ap.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="52" name="Metal Shield" tags="" position="913.3334333333335,3150">
+<tw-passagedata pid="52" name="Metal Shield" tags="" position="913,3150">
 (if: $gold &lt; 100)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 100) Here you go!
 
@@ -568,14 +577,14 @@ Your new damage is $ap.]
 Your new defense is $dp.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="53" name="status" tags="" position="1098.5,1031">Your health is: $hp
+<tw-passagedata pid="53" name="status" tags="" position="1098,1031">Your health is: $hp
 Your maximum health is: $maxhp
 Your attack damage is: $ap
 Your defense points are: $dp
 Your sneak modifier is: $ts
 Your gold is: $gold
 </tw-passagedata>
-<tw-passagedata pid="54" name="Arcane Staff" tags="" position="613.3333333333334,3108.3333333333335">
+<tw-passagedata pid="54" name="Arcane Staff" tags="" position="613,3108">
 (if: $gold &lt; 200)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 200) Here you go!
 (set: $mainwep = &quot;Arcane Staff&quot;)
@@ -585,7 +594,7 @@ Your gold is: $gold
 Your new damage is $ap.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="55" name="Ward spell" tags="" position="788.3336333333334,3121.666666666667">
+<tw-passagedata pid="55" name="Ward spell" tags="" position="788,3121">
 (if: $gold &lt; 100)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 100) Here you go!
 
@@ -594,7 +603,7 @@ Your new damage is $ap.]
 Your new defense is $dp.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="56" name="Bronze daggers" tags="" position="1038.3334333333335,3125">
+<tw-passagedata pid="56" name="Bronze daggers" tags="" position="1038,3125">
 (if: $gold &lt; 150)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 150) Here you go!
 (set: $mainwep = &quot;Bronze Dagger&quot;)
@@ -604,16 +613,16 @@ Your new defense is $dp.]
 Your new damage is $ap.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="57" name="iknowu" tags="" position="1098.5,906">Wait a second... I know you! You thought you could get away with getting back in this castle? 
+<tw-passagedata pid="57" name="iknowu" tags="" position="1098,906">Wait a second... I know you! You thought you could get away with getting back in this castle? 
 Change of plans.</tw-passagedata>
-<tw-passagedata pid="58" name="I don&#39;t want to go to this place." tags="" position="561.6666666666667,1090">You have a bad feeling about this place. As you turn around and start walking the opposite way, you hear the sounds of hooves charging behind you. Suddenly, knights in full metal armor come up to you, their sword up to your neck.
+<tw-passagedata pid="58" name="I don&#39;t want to go to this place." tags="" position="561,1090">You have a bad feeling about this place. As you turn around and start walking the opposite way, you hear the sounds of hooves charging behind you. Suddenly, knights in full metal armor come up to you, their sword up to your neck.
 
 &quot;Halt! You thought we wouldn&#39;t recognize you, after everything you&#39;ve done? Time to see if you like my prison.&quot;
 
 And with that, the guards knocks you out with a somber expression.
 
 [[To the prison]] </tw-passagedata>
-<tw-passagedata pid="59" name="Simple Leather Armor" tags="" position="986.6666666666667,2968.3333333333335">
+<tw-passagedata pid="59" name="Simple Leather Armor" tags="" position="986,2968">
 (if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 (set: $dp = $dp + 1)
@@ -625,7 +634,7 @@ Your sneak modifier is now: $ts
 ]]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="60" name="Simple mage robes" tags="" position="1131.6666666666667,2978.3333333333335">
+<tw-passagedata pid="60" name="Simple mage robes" tags="" position="1131,2978">
 (if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 (set: $dp = $dp + 1)
@@ -634,21 +643,21 @@ Your new defense modifier is now: $dp
 ]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="61" name="Buy potion of health" tags="" position="1256.6667666666667,2955">(if: $gold &lt; 50)[ You don&#39;t have enough money!]
+<tw-passagedata pid="61" name="Buy potion of health" tags="" position="1256,2955">(if: $gold &lt; 50)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 50) Here you go!
 You have bought a potion of +5 maximum health.
 (set: $maxhp = 20)
 Your maximum health is now $maxhp.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="62" name="Buy potion of damage" tags="" position="1381.6666666666667,2928.3333333333335">(if: $gold &lt; 75)[ You don&#39;t have enough money!]
+<tw-passagedata pid="62" name="Buy potion of damage" tags="" position="1381,2928">(if: $gold &lt; 75)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 75) Here you go!
 You have bought a potion of +5 maximum health.
 (set: $ap = $ap + .5)
 Your damage is now $ap.]
 
 [[Leave.]] </tw-passagedata>
-<tw-passagedata pid="63" name="Observe more of the guards and the castle." tags="" position="1685,2673.3333333333335">You decide to stop pacing around and take a close look at the guards.
+<tw-passagedata pid="63" name="Observe more of the guards and the castle." tags="" position="1685,2673">You decide to stop pacing around and take a close look at the guards.
 They are wearing an emblem splattered on their chest, the emblem of the castle.
 Their armor seems much superior to yours, and so do their weapons. There seems to be a dozen guards roaming around the entrance. There is no possible way that you can fight them all and win.
 
@@ -661,7 +670,7 @@ Looking around, you find a stash of 20 gold.
 You now have $gold gold.
 
 [[Go inside the castle.]] </tw-passagedata>
-<tw-passagedata pid="64" name="Go inside the castle." tags="" position="1835,2673.3333333333335">As you step through the massive wooden gates that serve as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
+<tw-passagedata pid="64" name="Go inside the castle." tags="" position="1835,2673">As you step through the massive wooden gates that serve as an entrance to the main hall of the castle, guards passively stare at you. Across the hall, you see two thrones, one bigger than the other. For the moment, these thrones are empty, but there is much activity around them. Many people are walking around, seemingly running administrative tasks you assume is for the city.
 
 You look around for a place where you should go.
 You find a small room labeled &quot;Security Office&quot;
@@ -672,12 +681,12 @@ In this room are three dwarves that reach up to your knee. They are all writing 
 [[Talk to the dwarves]]
 
 [[Leave the castle|LeaveCastleNow]]</tw-passagedata>
-<tw-passagedata pid="65" name="Attack the dwarves" tags="" position="1540,2611.666666666667">With your $mainwep drawn, you slaughter the three dwarves, as they hold no challenge against you. One manages to scream right before you send your $mainwep at him. 
+<tw-passagedata pid="65" name="Attack the dwarves" tags="" position="1540,2611">With your $mainwep drawn, you slaughter the three dwarves, as they hold no challenge against you. One manages to scream right before you send your $mainwep at him. 
 With that scream, three guards come rushing. These guards are not like the prison guards, as their armor and weapons are much more proficient.
 [[Run away from the guards]]
 
 [[Fight the guards!]]</tw-passagedata>
-<tw-passagedata pid="66" name="Talk to the dwarves" tags="" position="1728.3333333333335,2820">The dwarves look up as you walk into the room.
+<tw-passagedata pid="66" name="Talk to the dwarves" tags="" position="1728,2820">The dwarves look up as you walk into the room.
 One of the dwarves, dressed in all blue, goes behind the counter and faces you.
 
 &quot;Hello there. Welcome to the security office. How may I help you?&quot;
@@ -689,7 +698,7 @@ One of the dwarves, dressed in all blue, goes behind the counter and faces you.
 [[&quot;Never mind&quot;|Go inside the castle.]]
 
 </tw-passagedata>
-<tw-passagedata pid="67" name="Run away from the guards" tags="" position="1560,2756.666666666667">You sheathe you $mainwep and make a run for it. You hear arrows dropping from the sky all around you.
+<tw-passagedata pid="67" name="Run away from the guards" tags="" position="1560,2756">You sheathe you $mainwep and make a run for it. You hear arrows dropping from the sky all around you.
 As you run from the arrows, one lands right in the back of your knee, halting you mid run.
 You try to take the arrow out, but in vain. It is tightly enclosed within your bone.
 
@@ -697,7 +706,7 @@ The guards catch up to you and run their shiny sword down your spine.
 (set: $hp = &quot;brutally murdered&quot;)
 (display: &quot;status&quot;)
 (display: &quot;lose&quot;)</tw-passagedata>
-<tw-passagedata pid="68" name="Fight the guards!" tags="" position="1603.3333333333335,2821.666666666667">
+<tw-passagedata pid="68" name="Fight the guards!" tags="" position="1603,2821">
 Guards (x7)
 Attack modifier: 3
 Defense modifier: 3
@@ -706,7 +715,7 @@ Health: 15
 [[Run away from the guards]] 
 
 [[Attack them all!]]</tw-passagedata>
-<tw-passagedata pid="69" name="Attack them all!" tags="" position="1576.6666666666667,2946.666666666667">Your puny $ap damage modifier is no match for their combined 21.
+<tw-passagedata pid="69" name="Attack them all!" tags="" position="1576,2946">Your puny $ap damage modifier is no match for their combined 21.
 They form up a super attack, consisting of all of them charging at you with their weapons.
 
 You succumb to their assault.
@@ -714,33 +723,33 @@ You succumb to their assault.
 (display: &quot;status&quot;)
 
 (display: &quot;lose&quot;)</tw-passagedata>
-<tw-passagedata pid="70" name="&quot;I think I was unjustly imprisoned.&quot;" tags="" position="1701.6666666666667,2975">&quot;You were? Well I don&#39;t think it was much of a problem because you&#39;re here right now aren--oh...&quot;
+<tw-passagedata pid="70" name="&quot;I think I was unjustly imprisoned.&quot;" tags="" position="1701,2975">&quot;You were? Well I don&#39;t think it was much of a problem because you&#39;re here right now aren--oh...&quot;
 The dwarf takes a few steps away from you.
 &quot;So you escaped huh?&quot;
 
 [[Yes.]]
 
 [[No.]]</tw-passagedata>
-<tw-passagedata pid="71" name="&quot;Do you know anyone who looks like me?&quot;" tags="" position="1878.3333333333335,2970">The dwarf studies you for a short amount of time.
+<tw-passagedata pid="71" name="&quot;Do you know anyone who looks like me?&quot;" tags="" position="1878,2970">The dwarf studies you for a short amount of time.
 &quot;No, I don&#39;t think so... Why?&quot;
 
 [[&quot;I think I was unjustly imprisoned.&quot;]] 
 
 [[&quot;Never mind&quot;|Go inside the castle.]]</tw-passagedata>
-<tw-passagedata pid="72" name="LeaveCastleNow" tags="" position="1966.6666666666667,2720">You decide to leave the castle. You walk out and go back to the place where you first started.
+<tw-passagedata pid="72" name="LeaveCastleNow" tags="" position="1966,2720">You decide to leave the castle. You walk out and go back to the place where you first started.
 (display: &quot;Outside!&quot;)</tw-passagedata>
-<tw-passagedata pid="73" name="Yes." tags="" position="1701.6666666666667,3125">&quot;You did huh? Well, as long as you don&#39;t cause any trouble, you should be fine. Now, what is this unjustly imprisoned issue.. What happened?&quot;
+<tw-passagedata pid="73" name="Yes." tags="" position="1701,3125">&quot;You did huh? Well, as long as you don&#39;t cause any trouble, you should be fine. Now, what is this unjustly imprisoned issue.. What happened?&quot;
 
 [[&quot;Guards said they knew who I was and brought me to the prison.&quot;]]</tw-passagedata>
-<tw-passagedata pid="74" name="No." tags="" position="1851.6666666666667,3125">The dwarf relaxes as the word leaves your mouth.
+<tw-passagedata pid="74" name="No." tags="" position="1851,3125">The dwarf relaxes as the word leaves your mouth.
 
 &quot;Oh. Alright, then what is this thing about being unjustly imprisoned... What happened?&quot;
 
 [[&quot;Guards said they knew who I was and brought me to the prison.&quot;]] </tw-passagedata>
-<tw-passagedata pid="75" name="&quot;Guards said they knew who I was and brought me to the prison.&quot;" tags="" position="1701.6666666666667,3275">&quot;Really? I see. Let me look for you in our database.&quot;
+<tw-passagedata pid="75" name="&quot;Guards said they knew who I was and brought me to the prison.&quot;" tags="" position="1701,3275">&quot;Really? I see. Let me look for you in our database.&quot;
 
 [[&quot;My name is...&quot;]]</tw-passagedata>
-<tw-passagedata pid="76" name="&quot;My name is...&quot;" tags="" position="1546.6666666666667,3090">
+<tw-passagedata pid="76" name="&quot;My name is...&quot;" tags="" position="1546,3090">
 (set: $name to (prompt: &quot;Your name, please:&quot;))
 
 (if: $name is 0)[ //Since you did not choose a name, one will be picked for you.//
@@ -757,38 +766,86 @@ The dwarf tears out a page from the book, but the same page grows back immediate
  &quot;This is very confidential information, you must know that. This here is someone who looks identical to you. It is very confidential because this person was a powerful, loyal servant to our kingdom of Shael. However, he never had enough power. He succumbed to the darkness and became a demonic prince. Not many people know of him, because his records were deemed dangerous, and thus the citizens of Shael didn&#39;t have access to it.&quot;
  [[&quot;Why did you tell me this then?&quot;]]
 </tw-passagedata>
-<tw-passagedata pid="77" name="&quot;Why did you tell me this then?&quot;" tags="" position="1541.6666666666667,3276.666666666667">The dwarf uneasily shifts around in place.
+<tw-passagedata pid="77" name="&quot;Why did you tell me this then?&quot;" tags="" position="1541,3276">The dwarf uneasily shifts around in place.
 
 &quot;I-I know I wasn&#39;t supposed to tell you this, but I believe it is for your own good for you to know this, as you will have to face it your entire life.&quot;
 
 [[&quot;What did he do to this place?&quot;]]</tw-passagedata>
-<tw-passagedata pid="78" name="&quot;What did he do to this place?&quot;" tags="" position="1541.6666666666667,3426.666666666667">&quot;He completely destroyed it. He was bored one day, and this city was on his path. With one swipe of the hand, and razed the entire city, apart from the castle. It took us 50 years to fix this up. The guards that attacked you were most likely children during that period, scarred by his ravaging.&quot;
+<tw-passagedata pid="78" name="&quot;What did he do to this place?&quot;" tags="" position="1541,3426">&quot;He completely destroyed it. He was bored one day, and this city was on his path. With one swipe of the hand, and razed the entire city, apart from the castle. It took us 50 years to fix this up. The guards that attacked you were most likely children during that period, scarred by his ravaging.&quot;
 
 [[&quot;I&#39;ll leave now&quot;]]
 
 [[&quot;So.. He&#39;s very old then?&quot;]]</tw-passagedata>
-<tw-passagedata pid="79" name="&quot;I&#39;ll leave now&quot;" tags="" position="1395,3076.666666666667">&quot;Alright. Be sure to pass by the living areas and stock up on items before leaving, or anything else you might do there. Be wary on your adventures, my friend.&quot;
+<tw-passagedata pid="79" name="&quot;I&#39;ll leave now&quot;" tags="" position="1395,3076">&quot;Alright. Be sure to pass by the living areas and stock up on items before leaving, or anything else you might do there. Be wary on your adventures, my friend.&quot;
 
 You stash the paper he gave you in your bag. You don&#39;t know where this adventure will take you next, but with this new knowledge, hope that this issue will be resolved. You can&#39;t help but wonder, why do you and him look exactly alike? No one seems to have the answer to this.
 
 You walk out of the castle, back to where you broke out of the prison.
 (set: $story = 1)
 (display: &quot;Outside!&quot;)</tw-passagedata>
-<tw-passagedata pid="80" name="&quot;So.. He&#39;s very old then?&quot;" tags="" position="2003.3334333333335,2923.3333333333335">&quot;The power he gained by switching to the darkness was enough for him to become immortal to time. The only way he can die now is for someone to defeat him in combat. But no one is good enough for that, I&#39;m afraid.&quot;
+<tw-passagedata pid="80" name="&quot;So.. He&#39;s very old then?&quot;" tags="" position="2003,2923">&quot;The power he gained by switching to the darkness was enough for him to become immortal to time. The only way he can die now is for someone to defeat him in combat. But no one is good enough for that, I&#39;m afraid.&quot;
 
 [[&quot;I&#39;ll leave now&quot;]] 
 
 [[&quot;What is his name?&quot;]]</tw-passagedata>
-<tw-passagedata pid="81" name="&quot;What is his name?&quot;" tags="" position="2008.3333333333335,3065">&quot;No one knows his real name apart from him. We refer to him as Bane however, because, well, that&#39;s what he is.&quot;
+<tw-passagedata pid="81" name="&quot;What is his name?&quot;" tags="" position="2008,3065">&quot;No one knows his real name apart from him. We refer to him as Bane however, because, well, that&#39;s what he is.&quot;
 
 [[&quot;I&#39;ll leave now&quot;]] </tw-passagedata>
-<tw-passagedata pid="82" name="Leave the city" tags="" position="785,3460">(if:(save-game:&quot;Slot A&quot;))[
+<tw-passagedata pid="82" name="Leave the city" tags="" position="780,3468.3333333333335">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]
   
-  You have completed the introduction to the story of Shael! Feel free to restart with another character, or wait for me to release the rest.
+  You leave the city and head into the forest. 
+  You don&#39;t know what you should do next, as there are so many possibilities. You thought about joining a guild, as a way to find friends and a place to call home.
+  Would you like to join a guild?
+  
+  [[That would be best]]
+  
+  [[No. ]]</tw-passagedata>
+<tw-passagedata pid="83" name="That would be best" tags="" position="526.6666666666667,3530">Guilds function in a rank system. You start out small, and if you are good enough, you will grow to become a better member of the clan, have access to better missions, as well as get respect.
+There are three main guild in Shael, all of them located in the same city, the capital city of Qualcen.
 
-(display: &quot;wip&quot;)</tw-passagedata>
+The first is the warrior&#39;s guild, for adept fighters. These people stand at the front line in wars, and defend everyone standing behind, although dealing devastating damage themselves.
+
+The mage&#39;s guild is a guild specialized for the experienced in magical abilities. These guild members have high doses of determination, and will annihilate everyone in their paths.
+
+The rogue&#39;s guild is a guild made for those who walk around without anyone knowing, the ones who can get in anywhere and get whatever they want. This guild cares more about gold than anything else in the world.
+
+(if: $class is 1)[
+Since you are a ferocious fighter, you will choose to join the warrior&#39;s guild, in order to train your skills, or even become a royal knight.
+[[Join the warrior&#39;s guild]]]
+(if: $class is 2)[Since you are a wizard, you obviously want to choose the mage&#39;s guild. These people can train you with your magical prowess, and make you the greatest person who has ever lived.
+[[Join the mage&#39;s guild]]
+]
+(if:class is 3)[ Since you are a thief, the rogue&#39;s guild is an obvious choice for you. With this guild, you can earn vast amounts of money, and become the richest person in the world.
+[[Join the rogue&#39;s guild]]]</tw-passagedata>
+<tw-passagedata pid="84" name="No. " tags="" position="780,3618.3333333333335">But if you don&#39;t join a guild, you&#39;ll have nothing to do. Being in a guild ensures you can get activity, friends, and above all, money.
+
+[[Well then, I guess I&#39;ll join a guild|That would be best]]</tw-passagedata>
+<tw-passagedata pid="85" name="Join the warrior&#39;s guild" tags="" position="526.6666666666667,3680">You decide to try to join the warrior&#39;s guild. You get very excited about developing your skills as a defender of the kingdom, specializing in different kinds of weaponry.
+
+[[Go to Qualcen]]</tw-passagedata>
+<tw-passagedata pid="86" name="Join the mage&#39;s guild" tags="" position="655,3680">You decide to try to join the mage&#39;s guild. You are very excited about developing your skills as a master of the arcanes. You are eager to specialize in different types of magic.
+
+[[Go to Qualcen]]</tw-passagedata>
+<tw-passagedata pid="87" name="Join the rogue&#39;s guild" tags="" position="401.66666666666674,3680">You decide to go try to join the rogue&#39;s guild. You get very excited about the massive amounts of loot you will amass, and developing your skills as an assassin.
+
+[[Go to Qualcen]]</tw-passagedata>
+<tw-passagedata pid="88" name="Go to Qualcen" tags="" position="978.3333333333334,3440">(if:(save-game:&quot;Slot B&quot;))[
+    //Game Progress has been saved.//
+  ]
+
+You get out of the forest that served as a shortcut between your last town and Qualcen. After getting out, you start walking along a neatly paved road. You are not the only one on this path, as there are many around you.
+
+Wagons carrying goods from one place to another, people walking beside you, seemingly in a hurry, or the others riding on a mount.
+
+Two riders speed past you, throwing insults at each other as they seemingly race. They slow down, and dismount their horses, and look at somthing laying on the floor. All the other people around you stop, and go check out the new thing on the ground.
+
+[[Continue to Qualcen]]
+
+[[Go see what is on the ground.]]</tw-passagedata>
+<tw-passagedata pid="89" name="Continue to Qualcen" tags="" position="928.3333333333334,3596.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="90" name="Go see what is on the ground." tags="" position="1078.3333333333335,3596.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
 </tw-storydata>
 
 
