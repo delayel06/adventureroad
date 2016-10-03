@@ -19,3 +19,9 @@ Version 0.0.5 --
 
 Version 0.0.6 --
 -Major spell and grammar check.
+
+Version 0.0.7 --
+-Fixed bugs where you had to go back through castle to leave city, thus gaining infinite amounts of gold.
+-Commoner class bug fixed
+-Save games deleted, start a new game(some people got lots of gold)
+-Beginning part of next story.
