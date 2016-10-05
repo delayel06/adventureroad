@@ -22,5 +22,9 @@ The game is hosted by Github pages. You can find this site with the entirety of 
  
  Please contact me for any use of this work.
  
+ # Developer Access Area
+
+Developers, use this link to get to the developer page: http://youarethehero.tk/first.html
+ 
  
 
