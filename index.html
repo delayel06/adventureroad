@@ -232,10 +232,9 @@ You can only take one
 (if: $class is 1)[(set: $mainwep = &quot;Sword&quot;) Since you are a warrior, you choose to take the sword. This adds &#39;&#39;+1&#39;&#39; to both your damage modifier and your defense modifier(set: $ap = $ap + 1) (set: $dp = $dp + 1)]
 (elseif: $class is 2)[(set: $mainwep = &quot;spells&quot;) Since you are a wizard, you choose the spellbook. With this, you learn an offensive spell, which adds &#39;&#39;+2&#39;&#39; to your damage modifier.(set: $ap = $ap + 2)]
 (elseif: $class is 3)[(set: $mainwep = &quot;Dagger&quot;) Since you are a thief, you choose to take the dagger. This adds &#39;&#39;+2&#39;&#39; to your damage modifier and &#39;&#39;+.5&#39;&#39; to your sneak modifier.(set: $ap = $ap + 2) (set: $ts = $ts + 0.5)]
-(else:)[ (set: $thingtaken1 to (either: &quot;sword&quot;, &quot;book&quot;)) Since you have no distinctive class, you choose to take the $thingtaken1.(if: $thingtaken is &quot;sword&quot;)[ (set: $class = 1)]
-(if: $class is 4)[(set: $class = 2)]
+(else:)[ Since you have no distinctive class, you choose to take the book.(set: $class = 2)
 
-Your choices have changed what you now are.]
+You are now a wizard]
 
 [[Wait in the cell]]</tw-passagedata>
 <tw-passagedata pid="20" name="Wait in the cell" tags="" position="601,1386">(if: $ap &gt; 2)[ (set: $ap = $ap -1) From waiting in the cell so long, you lose an attack point.
@@ -415,11 +414,22 @@ Which vendor interests you?
 
 Do you go in?
 
+(if: $story is 1)[
 [[Go in the inn]]
+
+[[Actually, I&#39;ll leave the city|Leave the city]]
+
+[[Actually, I&#39;ll go buy things at the merchant.|Go shopping at the nearest merchant]]]
+
+(else:)[
 
 [[Actually, I&#39;ll go to the castle|Clear up your face and find out what happened.]]
 
-[[Actually, I&#39;ll go buy things at the merchant.|Go shopping at the nearest merchant]]</tw-passagedata>
+[[Actually, I&#39;ll go buy things at the merchant.|Go shopping at the nearest merchant]]
+
+[[Go in the inn]]
+
+]</tw-passagedata>
 <tw-passagedata pid="37" name="Go in the inn" tags="" position="355,2953">As you step inside, glaring eyes turn to you for a couple seconds.
 They soon turn back to their activities, such as gambling or heavy drinking.
 
@@ -494,8 +504,8 @@ Can I help you with anything else?&quot;
 
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
 <tw-passagedata pid="44" name="&quot;Yes, I want a room.&quot;" tags="" position="35,3061">
-(if: $gold &lt; 10)[ You don&#39;t have enough money!]
-(else:)[(set: $gold = $gold - 10) Here you go!
+(if: $gold &lt; 5)[ You don&#39;t have enough money!]
+(else:)[(set: $gold = $gold - 5) Here you go!
 (set: $room = 1) You have a room available for $room night.]
 
 (if: $room is 1)[ [[Go sleep]]]
@@ -556,7 +566,9 @@ Thank you so much for your contribution to this project!
 
 Please contact me with ideas and reviews, as well as issues I may not have seen at: delayel06@gmail.com
 
-For issues, go to the github page and under the &quot;Issues&quot; tab, create a new one.</tw-passagedata>
+For issues, go to the github page and under the &quot;Issues&quot; tab, create a new one.
+
+If you could help the prject by creating artwork, proofing passages, testing the story before it gets released, I will be very happy! Contact me for this.</tw-passagedata>
 <tw-passagedata pid="50" name="Leave." tags="" position="590,2795">You leave and go the living areas.
 (display: &quot;Go to the living areas&quot;)</tw-passagedata>
 <tw-passagedata pid="51" name="Steel Sword" tags="" position="738,3108">
@@ -585,7 +597,7 @@ Your attack damage is: $ap
 Your defense points are: $dp
 Your sneak modifier is: $ts
 Your gold is: $gold
-</tw-passagedata>
+Your critical status(2x damage) is: $crit</tw-passagedata>
 <tw-passagedata pid="54" name="Arcane Staff" tags="" position="613,3108">
 (if: $gold &lt; 200)[ You don&#39;t have enough money!]
 (else:)[(set: $gold = $gold - 200) Here you go!
@@ -846,7 +858,8 @@ Two riders speed past you, throwing insults at each other as they seemingly race
 [[Continue to Qualcen]]
 
 [[Go see what is on the ground.]]</tw-passagedata>
-<tw-passagedata pid="89" name="Continue to Qualcen" tags="" position="678.3333333333334,3845">You continue walking along the paved road. The sun is setting at an alarming rate. You have to reach the capital before nightfall, as they lock massive stone gates tightly shut after the sun sets. This would leave you to sleep out in the wilderness, or maybe find people kind enough to share their home for the night.
+<tw-passagedata pid="89" name="Continue to Qualcen" tags="" position="678.3333333333334,3845">(set: $ehp = 10)(set: $edp = 0)(set: $eap = 2)
+You continue walking along the paved road. The sun is setting at an alarming rate. You have to reach the capital before nightfall, as they lock massive stone gates tightly shut after the sun sets. This would leave you to sleep out in the wilderness, or maybe find people kind enough to share their home for the night.
 
 [[Keep walking slow. Don&#39;t want to twist my ankle now, do I?]]
 
@@ -903,11 +916,11 @@ Suddenly, a loud trumpet noise is played, and everyody around you take a few ste
 [[&quot;What is that thing?&quot;]] 
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="96" name="&quot;He doesn&#39;t seem evil..&quot;" tags="" position="953.3334333333335,3865">&quot;That&#39;s because you haven&#39;t waged wars with demons yet, have you? Demons will inflict tremendous pain upon you. Of course, this is a lesser demon, but if you see the biggers ones...&quot;
+<tw-passagedata pid="96" name="&quot;He doesn&#39;t seem evil..&quot;" tags="" position="938.3333333333334,3821.666666666667">&quot;That&#39;s because you haven&#39;t waged wars with demons yet, have you? Demons will inflict tremendous pain upon you. Of course, this is a lesser demon, but if you see the biggers ones...&quot;
 
 Most of the people who were once observing the creature are gone. Perhaps, you should continue on your path to joining a guild.
 
-[[Go to Qualcen]] </tw-passagedata>
+[[Continue to Qualcen]] </tw-passagedata>
 <tw-passagedata pid="97" name="Keep walking slow. Don&#39;t want to twist my ankle now, do I?" tags="" position="678.3333333333334,3995">You continue to stay at your original pace. You observe how the sun&#39;s setting light rests on the trees and the shrubs around you. A few scurrying mice pass by right below your feet, as well as a chicken, crossing the road right in front of you.
 
 Wagons pass by, each carrying their specific load of supplies, even some empty. It would mean a lot to you to have a responsability sometihn to do. You realize that your life has no meaning right now, that you aren&#39;t doing anything.
@@ -930,8 +943,106 @@ While thinking about all the new thoughts surging to your brain, you get lost. T
 [[Just continue on forward]]
 
 [[Find people living around here]]</tw-passagedata>
-<tw-passagedata pid="99" name="Just continue on forward" tags="" position="828.3333333333334,4145">(display: &quot;wip&quot;)</tw-passagedata>
-<tw-passagedata pid="100" name="Find people living around here" tags="" position="978.3333333333334,4145">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="99" name="Just continue on forward" tags="" position="828.3333333333334,4145">You keep walking forward, through the setting light. It is soon dark, and you have no notice of how close or far you are to the capital.
+
+[[Find people living around here]] 
+
+[[Explore the dark forest in front of you.]]
+
+[[Try to set up camp]]</tw-passagedata>
+<tw-passagedata pid="100" name="Find people living around here" tags="" position="1118.3333333333335,4116.666666666667">(display: &quot;save&quot;)
+
+You walk around the area in circles, looking for any sort of habitation, anything that could keep you safe and warm for the night.
+
+Off in the distance, you hear cries and yells for help.
+
+[[Go investigate]]
+
+[[Explore the dark forest in front of you.]] </tw-passagedata>
+<tw-passagedata pid="101" name="Explore the dark forest in front of you." tags="" position="828.3333333333334,4295">
+You walk through the forest, your eyes anxiously wandering around the dark woods. 
+As you walk, you feel uncomfortable, as if something was looking at you, staring you down.
+
+[[Continue walking through the forest]]
+
+[[Turn around, slowly]]</tw-passagedata>
+<tw-passagedata pid="102" name="Try to set up camp" tags="" position="1268.3333333333335,4216.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="103" name="save" tags="" position="1416,3490">(if:(save-game:&quot;Slot B&quot;))[
+    //Game Progress has been saved.//
+  ]</tw-passagedata>
+<tw-passagedata pid="104" name="Go investigate" tags="" position="1041.6666666666667,4286.666666666667">As you march through the forest, in hope of helping people, you stumble apon a trail of blood.
+
+You then hear a low growl, right behind you.
+
+BEAR:
+Attack modifier: $eap
+Defense modifier: $edp
+Health: $ehp
+
+[[Attack the bear with your weapon!]]
+
+[[Bear!Run!!]]</tw-passagedata>
+<tw-passagedata pid="105" name="Continue walking through the forest" tags="" position="828.3333333333334,4445">You continue walking, but after a short time, a pair of red eyes lock onto you. It&#39;s a bear!
+
+BEAR:
+Attack modifier: $eap
+Defense modifier: $edp
+Health: $ehp
+
+[[Bear!Run!!]] 
+
+[[Attack the bear with your weapon!]] </tw-passagedata>
+<tw-passagedata pid="106" name="Turn around, slowly" tags="" position="978.3333333333334,4445">You slowly turn around, as a pair of red eyes are staring at you, and huge yellow teeth baring themselves.
+
+BEAR:
+Attack modifier: $eap
+Defense modifier: $edp
+Health: $ehp
+
+[[Attack the bear with your weapon!]]
+
+[[Bear!Run!!]]</tw-passagedata>
+<tw-passagedata pid="107" name="Bear!Run!!" tags="" position="1235,4576.666666666667">(if: $ts &gt; 2)[
+//Sneak Skill Success//
+You leave the bear behind as you continue on.
+
+[[Try to set up camp]] 
+]
+(else:)[
+//Sneak Skill Failure//
+Your sneak skill isn&#39;t high enough! You now have to [[attack.|Attack the bear with your weapon!]] 
+
+
+]</tw-passagedata>
+<tw-passagedata pid="108" name="Attack the bear with your weapon!" tags="" position="911.6666666666667,4588.333333333334">
+(set: $strikephrase to (either: &quot;The massive beast gives off a loud growl as you hit it.&quot;, &quot;The bear flinches as you hit it.&quot;, &quot;You hit the bear in the nose with your $mainwep&quot;))
+(set: $estrikephrase to (either: &quot;The monster hits you with its sharp claws&quot;, &quot;With a ferocious bite, the beast damages you&quot;, &quot;The bears lashes out at you&quot;))
+ (set: $rdm to (either: 1, 2, 3))
+ (set: $erdm to (either: 1, 2, 3))
+ (if: $rdm is 2)[ Your attack misses the bear! You inflict 0 damage to it.]
+ (else:)[ $strikephrase. You inflict $ap damage to him
+ (if: $edp &gt; $ap)[The monster&#39;s defense is too high for you! You do 0 damage to it.]
+ (else:)[
+ (set: $ehp = $ehp + $edp - $ap)
+ ]]
+ (if: $erdm is 2)[ The bear claws at you, but misses. it inflicts 0 damage to you]
+ (else:)[ $estrikephrase. It does $eap damage to you
+ (if: $dp &gt; $eap)[You defense is too high for the mosnter to hurt you! It does 0 damage to you.]
+ (else:)[
+ (set: $hp = $hp + $dp - $eap)
+ ]]
+ (if: $ehp &lt; 1)[(goto: &quot;Bearwin&quot;)]
+(if: $hp &lt; 1)[(goto: &quot;lose&quot;)]
+[[Attack it again!|Attack the bear with your weapon!]] 
+
+</tw-passagedata>
+<tw-passagedata pid="109" name="Bearwin" tags="" position="1138.3333333333335,4411.666666666667">You have beaten the monster! 
+[[Try to set up camp]] 
+
+[[Examine the monster]]</tw-passagedata>
+<tw-passagedata pid="110" name="Examine the monster" tags="" position="1053.3333333333335,4610">As you lean closer towards the monster, you find 30 gold. Good job!
+
+[[Try to set up camp]] </tw-passagedata>
 </tw-storydata>
 
 
