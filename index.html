@@ -906,7 +906,7 @@ Suddenly, a loud trumpet noise is played, and everyody around you take a few ste
 [[&quot;Who are you exactly?&quot;]]
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="94" name="&quot;What is that thing?&quot;" tags="" position="1103.3334333333335,3973.3333333333335">&quot;I&#39;m afraid that&#39;s a young demonyou have right there in front of you. The royal authorities have ordered us to remove this and scout for more if there are any around this one, if perhaps he wasn&#39;t the only one who is here.&quot;
+<tw-passagedata pid="94" name="&quot;What is that thing?&quot;" tags="" position="1103.3333333333335,3963.3333333333335">&quot;I&#39;m afraid that&#39;s a young demonyou have right there in front of you. The royal authorities have ordered us to remove this and scout for more if there are any around this one, if perhaps he wasn&#39;t the only one who is here.&quot;
 
 [[&quot;He doesn&#39;t seem evil..&quot;]]
 
@@ -916,7 +916,7 @@ Suddenly, a loud trumpet noise is played, and everyody around you take a few ste
 [[&quot;What is that thing?&quot;]] 
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="96" name="&quot;He doesn&#39;t seem evil..&quot;" tags="" position="938.3333333333334,3821.666666666667">&quot;That&#39;s because you haven&#39;t waged wars with demons yet, have you? Demons will inflict tremendous pain upon you. Of course, this is a lesser demon, but if you see the biggers ones...&quot;
+<tw-passagedata pid="96" name="&quot;He doesn&#39;t seem evil..&quot;" tags="" position="953.3333333333335,3853.3333333333335">&quot;That&#39;s because you haven&#39;t waged wars with demons yet, have you? Demons will inflict tremendous pain upon you. Of course, this is a lesser demon, but if you see the biggers ones...&quot;
 
 Most of the people who were once observing the creature are gone. Perhaps, you should continue on your path to joining a guild.
 
@@ -1021,15 +1021,21 @@ Your sneak skill isn&#39;t high enough! You now have to [[attack.|Attack the bea
  (set: $erdm to (either: 1, 2, 3))
  (if: $rdm is 2)[ Your attack misses the bear! You inflict 0 damage to it.]
  (else:)[ $strikephrase. You inflict $ap damage to him
- (if: $edp &gt; $ap)[The monster&#39;s defense is too high for you! You do 0 damage to it.]
+ (if: $edp &gt; $ap)[*The monster&#39;s defense is too high for you! You actually do 0 damage to it.*]
  (else:)[
  (set: $ehp = $ehp + $edp - $ap)
+ Your health is now: $hp
+ The bear&#39;s health is now: $ehp
+ 
  ]]
  (if: $erdm is 2)[ The bear claws at you, but misses. it inflicts 0 damage to you]
  (else:)[ $estrikephrase. It does $eap damage to you
- (if: $dp &gt; $eap)[You defense is too high for the mosnter to hurt you! It does 0 damage to you.]
+ (if: $dp &gt; $eap)[*You defense is too high for the monster to hurt you! It actually does 0 damage to you.*]
  (else:)[
  (set: $hp = $hp + $dp - $eap)
+ Your health is now: $hp
+ The bear&#39;s health is now: $ehp
+ 
  ]]
  (if: $ehp &lt; 1)[(goto: &quot;Bearwin&quot;)]
 (if: $hp &lt; 1)[(goto: &quot;lose&quot;)]
