@@ -38,4 +38,10 @@ Version 0.1.0 --
 --Big update! New areas added, 1 new monster to fight, equipped with a hit-or-miss system.
 --Can now loot some of the monsters you find on the road.
 --Spellchecked and fixed a bit of stuff, especialy parts where you could just loop for gold.
---Next update will have Qualcen!
+
+Version 0.1.1 --
+--Added up until Qualcen. Expect this very soon!
+--More bugfixes.
+--More spellcheck.
+--Reduced chances of missing attacks starting with latest monster from 33% to 25%.
+
