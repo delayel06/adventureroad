@@ -24,23 +24,25 @@ tw-sidebar tw-icon.undo {
 	display: none;
 }
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
+
 </script><tw-passagedata pid="1" name="Start" tags="" position="480,4">{(if: (saved-games:) contains &quot;Slot B&quot;)[
+
 Load previous game?
   (link: &quot;Load game&quot;)[(load-game:&quot;Slot B&quot;)]
+  &lt;br&gt;
   &lt;br&gt;
  [[Start a new game|Starter]]
 ]}
 
 (else:)[
 
-Welcome to the RetroRPG adventure game, where we bring back the joys of 						old retro text-based games!
 
-
-				
-					[[Start your adventure|Starter]]]</tw-passagedata>
-<tw-passagedata pid="2" name="Starter" tags="" position="499,181">(if: $Death is 1)[
+[[&lt;img src=&quot;yay.jpg&quot;&gt;-&gt;Starter]]]
+</tw-passagedata>
+<tw-passagedata pid="2" name="Starter" tags="" position="451.6666666666667,190">(if: $Death is 1)[
 You are reborn from the ashes of a great hero...
 
 Your new life will be one of great honor.]
@@ -805,7 +807,7 @@ You walk out of the castle, back to where you broke out of the prison.
 <tw-passagedata pid="81" name="&quot;What is his name?&quot;" tags="" position="2008,3065">&quot;No one knows his real name apart from him. We refer to him as Bane however, because, well, that&#39;s what he is.&quot;
 
 [[&quot;I&#39;ll leave now&quot;]] </tw-passagedata>
-<tw-passagedata pid="82" name="Leave the city" tags="" position="780,3468.3333333333335">(if:(save-game:&quot;Slot B&quot;))[
+<tw-passagedata pid="82" name="Leave the city" tags="" position="780,3468">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]
   
@@ -816,7 +818,7 @@ You walk out of the castle, back to where you broke out of the prison.
   [[That would be best]]
   
   [[No. ]]</tw-passagedata>
-<tw-passagedata pid="83" name="That would be best" tags="" position="526.6666666666667,3530">Guilds function in a rank system. You start out small, and if you are good enough, you will grow to become a better member of the clan, have access to better missions, as well as get respect.
+<tw-passagedata pid="83" name="That would be best" tags="" position="526,3530">Guilds function in a rank system. You start out small, and if you are good enough, you will grow to become a better member of the clan, have access to better missions, as well as get respect.
 There are three main guild in Shael, all of them located in the same city, the capital city of Qualcen.
 
 The first is the warrior&#39;s guild, for adept fighters. These people stand at the front line in wars, and defend everyone standing behind, although dealing devastating damage themselves.
@@ -833,19 +835,19 @@ Since you are a ferocious fighter, you will choose to join the warrior&#39;s gui
 ]
 (if: $class is 3)[ Since you are a thief, the rogue&#39;s guild is an obvious choice for you. With this guild, you can earn vast amounts of money, and become the richest person in the world.
 [[Join the rogue&#39;s guild]]]</tw-passagedata>
-<tw-passagedata pid="84" name="No. " tags="" position="780,3618.3333333333335">But if you don&#39;t join a guild, you&#39;ll have nothing to do. Being in a guild ensures you can get activity, friends, and above all, money.
+<tw-passagedata pid="84" name="No. " tags="" position="780,3618">But if you don&#39;t join a guild, you&#39;ll have nothing to do. Being in a guild ensures you can get activity, friends, and above all, money.
 
 [[Well then, I guess I&#39;ll join a guild|That would be best]]</tw-passagedata>
-<tw-passagedata pid="85" name="Join the warrior&#39;s guild" tags="" position="526.6666666666667,3680">You decide to try to join the warrior&#39;s guild. You get very excited about developing your skills as a defender of the kingdom, specializing in different kinds of weaponry.
+<tw-passagedata pid="85" name="Join the warrior&#39;s guild" tags="" position="526,3680">You decide to try to join the warrior&#39;s guild. You get very excited about developing your skills as a defender of the kingdom, specializing in different kinds of weaponry.
 
 [[Go to Qualcen]]</tw-passagedata>
 <tw-passagedata pid="86" name="Join the mage&#39;s guild" tags="" position="655,3680">You decide to try to join the mage&#39;s guild. You are very excited about developing your skills as a master of the arcanes. You are eager to specialize in different types of magic.
 
 [[Go to Qualcen]]</tw-passagedata>
-<tw-passagedata pid="87" name="Join the rogue&#39;s guild" tags="" position="401.66666666666674,3680">You decide to go try to join the rogue&#39;s guild. You get very excited about the massive amounts of loot you will amass, and developing your skills as an assassin.
+<tw-passagedata pid="87" name="Join the rogue&#39;s guild" tags="" position="401,3680">You decide to go try to join the rogue&#39;s guild. You get very excited about the massive amounts of loot you will amass, and developing your skills as an assassin.
 
 [[Go to Qualcen]]</tw-passagedata>
-<tw-passagedata pid="88" name="Go to Qualcen" tags="" position="978.3333333333334,3440">(if:(save-game:&quot;Slot B&quot;))[
+<tw-passagedata pid="88" name="Go to Qualcen" tags="" position="978,3440">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]
 
@@ -858,25 +860,25 @@ Two riders speed past you, throwing insults at each other as they seemingly race
 [[Continue to Qualcen]]
 
 [[Go see what is on the ground.]]</tw-passagedata>
-<tw-passagedata pid="89" name="Continue to Qualcen" tags="" position="678.3333333333334,3845">(set: $ehp = 10)(set: $edp = 0)(set: $eap = 2)
+<tw-passagedata pid="89" name="Continue to Qualcen" tags="" position="678,3845">(set: $ehp = 10)(set: $edp = 0)(set: $eap = 2)
 You continue walking along the paved road. The sun is setting at an alarming rate. You have to reach the capital before nightfall, as they lock massive stone gates tightly shut after the sun sets. This would leave you to sleep out in the wilderness, or maybe find people kind enough to share their home for the night.
 
 [[Keep walking slow. Don&#39;t want to twist my ankle now, do I?]]
 
 [[Walk faster, maybe even run]]</tw-passagedata>
-<tw-passagedata pid="90" name="Go see what is on the ground." tags="" position="1078.3333333333335,3596.666666666667">On the ground in front of you lies a small green creature. Spikes are sticking out of one end, while a furry taft is strapped on to the lower part of it.
+<tw-passagedata pid="90" name="Go see what is on the ground." tags="" position="1078,3596">On the ground in front of you lies a small green creature. Spikes are sticking out of one end, while a furry taft is strapped on to the lower part of it.
 [[Shake it around]]
 
 [[Stab it]]
 
 [[Continue to Qualcen]]</tw-passagedata>
-<tw-passagedata pid="91" name="Shake it around" tags="" position="1078.3333333333335,3746.666666666667">You gently knock the creature over with your foot, trying to determinee what it is and in what state it is.
+<tw-passagedata pid="91" name="Shake it around" tags="" position="1078,3746">You gently knock the creature over with your foot, trying to determinee what it is and in what state it is.
 
 As you turn it around, you find an arrow lodged in its chest, a fatal arrow that killed this creature.
-Wiping your boots free of the green, mucus-like substance.
+You wipe your boots free of the green, mucus-like substance.
 
 [[Take its spike off]] </tw-passagedata>
-<tw-passagedata pid="92" name="Stab it" tags="" position="1228.3333333333335,3746.666666666667">You take a cmall piece of wood next to you, and impale the creature on top of it, only to see green liquid spewing out, as well as the creature being already dead.
+<tw-passagedata pid="92" name="Stab it" tags="" position="1225,3745">You take a small piece of wood next to you, and impale the creature on top of it, only to see green liquid spewing out, as well as the creature being already dead.
 
 The others around you look at you in disgust. They can&#39;t believe you would have done such a horrid thing.
 
@@ -890,7 +892,7 @@ You new fame is now $fame
 [[Take its spike off]]
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="93" name="Take its spike off" tags="" position="1228.3333333333335,3896.666666666667">You you take its spike off, which turns out to be a leather hat, that could have been possibly wore as a last layer of defense, you find a few gold pieces dropping out of it.
+<tw-passagedata pid="93" name="Take its spike off" tags="" position="1228,3896">You you take its spike off, which turns out to be a leather hat, that could have been possibly wore as a last layer of defense, you find a few gold pieces dropping out of it.
 
 You gain +10 gold.
 (set: $gold = $gold + 10)
@@ -906,7 +908,7 @@ Suddenly, a loud trumpet noise is played, and everyody around you take a few ste
 [[&quot;Who are you exactly?&quot;]]
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="94" name="&quot;What is that thing?&quot;" tags="" position="1103.3333333333335,3963.3333333333335">&quot;I&#39;m afraid that&#39;s a young demonyou have right there in front of you. The royal authorities have ordered us to remove this and scout for more if there are any around this one, if perhaps he wasn&#39;t the only one who is here.&quot;
+<tw-passagedata pid="94" name="&quot;What is that thing?&quot;" tags="" position="1103,3963">&quot;I&#39;m afraid that&#39;s a young demonyou have right there in front of you. The royal authorities have ordered us to remove this and scout for more if there are any around this one, if perhaps he wasn&#39;t the only one who is here.&quot;
 
 [[&quot;He doesn&#39;t seem evil..&quot;]]
 
@@ -916,12 +918,12 @@ Suddenly, a loud trumpet noise is played, and everyody around you take a few ste
 [[&quot;What is that thing?&quot;]] 
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="96" name="&quot;He doesn&#39;t seem evil..&quot;" tags="" position="953.3333333333335,3853.3333333333335">&quot;That&#39;s because you haven&#39;t waged wars with demons yet, have you? Demons will inflict tremendous pain upon you. Of course, this is a lesser demon, but if you see the biggers ones...&quot;
+<tw-passagedata pid="96" name="&quot;He doesn&#39;t seem evil..&quot;" tags="" position="953,3853">&quot;That&#39;s because you haven&#39;t waged wars with demons yet, have you? Demons will inflict tremendous pain upon you. Of course, this is a lesser demon, but if you see the biggers ones...&quot;
 
 Most of the people who were once observing the creature are gone. Perhaps, you should continue on your path to joining a guild.
 
 [[Continue to Qualcen]] </tw-passagedata>
-<tw-passagedata pid="97" name="Keep walking slow. Don&#39;t want to twist my ankle now, do I?" tags="" position="678.3333333333334,3995">You continue to stay at your original pace. You observe how the sun&#39;s setting light rests on the trees and the shrubs around you. A few scurrying mice pass by right below your feet, as well as a chicken, crossing the road right in front of you.
+<tw-passagedata pid="97" name="Keep walking slow. Don&#39;t want to twist my ankle now, do I?" tags="" position="678,3995">You continue to stay at your original pace. You observe how the sun&#39;s setting light rests on the trees and the shrubs around you. A few scurrying mice pass by right below your feet, as well as a chicken, crossing the road right in front of you.
 
 Wagons pass by, each carrying their specific load of supplies, even some empty. It would mean a lot to you to have a responsability sometihn to do. You realize that your life has no meaning right now, that you aren&#39;t doing anything.
 However, you are grateful that you&#39;re not emprisoned by the grasp of some jobs and responsibilities, like most people are. You want to find balance in your life, a perfect equilibrium that will become your reason to live, your sole existence.
@@ -931,7 +933,7 @@ While thinking about all the new thoughts surging to your brain, you get lost. T
 [[Just continue on forward]]
 
 [[Find people living around here]]</tw-passagedata>
-<tw-passagedata pid="98" name="Walk faster, maybe even run" tags="" position="828.3333333333334,3995">You start accelerating, walking even faster. You even come to a point where you start jogging, in order to keep up with the sun.
+<tw-passagedata pid="98" name="Walk faster, maybe even run" tags="" position="828,3995">You start accelerating, walking even faster. You even come to a point where you start jogging, in order to keep up with the sun.
 
 While doing this, you have no notion of the golden glow resting on the leaves of trees, as well as the bushes.
 You oay no attention to the mice, scurrying below your feet, or the chicken crossing the road right in front of you.
@@ -943,14 +945,14 @@ While thinking about all the new thoughts surging to your brain, you get lost. T
 [[Just continue on forward]]
 
 [[Find people living around here]]</tw-passagedata>
-<tw-passagedata pid="99" name="Just continue on forward" tags="" position="828.3333333333334,4145">You keep walking forward, through the setting light. It is soon dark, and you have no notice of how close or far you are to the capital.
+<tw-passagedata pid="99" name="Just continue on forward" tags="" position="828,4145">You keep walking forward, through the setting light. It is soon dark, and you have no notice of how close or far you are to the capital.
 
 [[Find people living around here]] 
 
 [[Explore the dark forest in front of you.]]
 
 [[Try to set up camp]]</tw-passagedata>
-<tw-passagedata pid="100" name="Find people living around here" tags="" position="1118.3333333333335,4116.666666666667">(display: &quot;save&quot;)
+<tw-passagedata pid="100" name="Find people living around here" tags="" position="1118,4116">(display: &quot;save&quot;)
 
 You walk around the area in circles, looking for any sort of habitation, anything that could keep you safe and warm for the night.
 
@@ -959,18 +961,26 @@ Off in the distance, you hear cries and yells for help.
 [[Go investigate]]
 
 [[Explore the dark forest in front of you.]] </tw-passagedata>
-<tw-passagedata pid="101" name="Explore the dark forest in front of you." tags="" position="828.3333333333334,4295">
+<tw-passagedata pid="101" name="Explore the dark forest in front of you." tags="" position="828,4295">
 You walk through the forest, your eyes anxiously wandering around the dark woods. 
 As you walk, you feel uncomfortable, as if something was looking at you, staring you down.
 
 [[Continue walking through the forest]]
 
 [[Turn around, slowly]]</tw-passagedata>
-<tw-passagedata pid="102" name="Try to set up camp" tags="" position="1268.3333333333335,4216.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
+<tw-passagedata pid="102" name="Try to set up camp" tags="" position="1268,4216">Settling down, you start by making shelter from what is around you.
+
+You choose to:
+
+[[Use the trees around you and leaves to make a good, primitive hut which will last through the night.]]
+
+[[Dig down in the ground and create an underground home.]]
+
+[[Sleep out in the open. Who needs shelter anyways?]]</tw-passagedata>
 <tw-passagedata pid="103" name="save" tags="" position="1416,3490">(if:(save-game:&quot;Slot B&quot;))[
     //Game Progress has been saved.//
   ]</tw-passagedata>
-<tw-passagedata pid="104" name="Go investigate" tags="" position="1041.6666666666667,4286.666666666667">As you march through the forest, in hope of helping people, you stumble apon a trail of blood.
+<tw-passagedata pid="104" name="Go investigate" tags="" position="1041,4286">As you march through the forest, in hope of helping people, you stumble apon a trail of blood.
 
 You then hear a low growl, right behind you.
 
@@ -982,7 +992,7 @@ Health: $ehp
 [[Attack the bear with your weapon!]]
 
 [[Bear!Run!!]]</tw-passagedata>
-<tw-passagedata pid="105" name="Continue walking through the forest" tags="" position="828.3333333333334,4445">You continue walking, but after a short time, a pair of red eyes lock onto you. It&#39;s a bear!
+<tw-passagedata pid="105" name="Continue walking through the forest" tags="" position="828,4445">You continue walking, but after a short time, a pair of red eyes lock onto you. It&#39;s a bear!
 
 BEAR:
 Attack modifier: $eap
@@ -992,7 +1002,7 @@ Health: $ehp
 [[Bear!Run!!]] 
 
 [[Attack the bear with your weapon!]] </tw-passagedata>
-<tw-passagedata pid="106" name="Turn around, slowly" tags="" position="978.3333333333334,4445">You slowly turn around, as a pair of red eyes are staring at you, and huge yellow teeth baring themselves.
+<tw-passagedata pid="106" name="Turn around, slowly" tags="" position="978,4445">You slowly turn around, as a pair of red eyes are staring at you, and huge yellow teeth baring themselves.
 
 BEAR:
 Attack modifier: $eap
@@ -1002,7 +1012,7 @@ Health: $ehp
 [[Attack the bear with your weapon!]]
 
 [[Bear!Run!!]]</tw-passagedata>
-<tw-passagedata pid="107" name="Bear!Run!!" tags="" position="1235,4576.666666666667">(if: $ts &gt; 2)[
+<tw-passagedata pid="107" name="Bear!Run!!" tags="" position="1235,4576">(if: $ts &gt; 2)[
 //Sneak Skill Success//
 You leave the bear behind as you continue on.
 
@@ -1014,41 +1024,78 @@ Your sneak skill isn&#39;t high enough! You now have to [[attack.|Attack the bea
 
 
 ]</tw-passagedata>
-<tw-passagedata pid="108" name="Attack the bear with your weapon!" tags="" position="911.6666666666667,4588.333333333334">
+<tw-passagedata pid="108" name="Attack the bear with your weapon!" tags="" position="813.3333333333334,4640">
 (set: $strikephrase to (either: &quot;The massive beast gives off a loud growl as you hit it.&quot;, &quot;The bear flinches as you hit it.&quot;, &quot;You hit the bear in the nose with your $mainwep&quot;))
 (set: $estrikephrase to (either: &quot;The monster hits you with its sharp claws&quot;, &quot;With a ferocious bite, the beast damages you&quot;, &quot;The bears lashes out at you&quot;))
  (set: $rdm to (either: 1, 2, 3))
  (set: $erdm to (either: 1, 2, 3))
  (if: $rdm is 2)[ Your attack misses the bear! You inflict 0 damage to it.]
- (else:)[ $strikephrase. You inflict $ap damage to him
- (if: $edp &gt; $ap)[*The monster&#39;s defense is too high for you! You actually do 0 damage to it.*]
- (else:)[
+ (else:)[ $strikephrase. You inflict $ap damage to him, reduced by his $edp defense points.
+ 
  (set: $ehp = $ehp + $edp - $ap)
- Your health is now: $hp
- The bear&#39;s health is now: $ehp
  
- ]]
+ ]
  (if: $erdm is 2)[ The bear claws at you, but misses. it inflicts 0 damage to you]
- (else:)[ $estrikephrase. It does $eap damage to you
- (if: $dp &gt; $eap)[*You defense is too high for the monster to hurt you! It actually does 0 damage to you.*]
- (else:)[
+ (else:)[ $estrikephrase. It does $eap damage to you, although reduced by your $dp defense points.
  (set: $hp = $hp + $dp - $eap)
- Your health is now: $hp
+
+ 
+ ]
+ 
+  Your health is now: $hp
  The bear&#39;s health is now: $ehp
  
- ]]
  (if: $ehp &lt; 1)[(goto: &quot;Bearwin&quot;)]
 (if: $hp &lt; 1)[(goto: &quot;lose&quot;)]
 [[Attack it again!|Attack the bear with your weapon!]] 
 
 </tw-passagedata>
-<tw-passagedata pid="109" name="Bearwin" tags="" position="1138.3333333333335,4411.666666666667">You have beaten the monster! 
+<tw-passagedata pid="109" name="Bearwin" tags="" position="1138,4411">You have beaten the monster! 
 [[Try to set up camp]] 
 
 [[Examine the monster]]</tw-passagedata>
-<tw-passagedata pid="110" name="Examine the monster" tags="" position="1053.3333333333335,4610">As you lean closer towards the monster, you find 30 gold. Good job!
+<tw-passagedata pid="110" name="Examine the monster" tags="" position="1026.6666666666667,4646.666666666667">As you lean closer towards the monster, you find 30 gold. Good job!
 
 [[Try to set up camp]] </tw-passagedata>
+<tw-passagedata pid="111" name="Use the trees around you and leaves to make a good, primitive hut which will last through the night." tags="" position="1540.0002,4043.3333333333335">You gather small sticks, as well as massive amounts of leaves. This takes you a long amount of time, but you are sure it will pay off. After aligning all the sticks in order to makea self-standing shack, you cover the entire things with thick, green leaves. 
+
+Right as you complete this, it starts raining.
+
+Thankful to have made your shelter, you sleep nice and cozily, without any problems that could harm your sleep.
+
+You sleep so well, that you restore all of your health.
+
+(set: $hp = $maxhp)
+
+[[The city!]] </tw-passagedata>
+<tw-passagedata pid="112" name="Dig down in the ground and create an underground home." tags="" position="1451.6666666666667,4185">You use anything, and everything you have, in order to try to dig and create a shelter. After half an hour of hitting the ground, you realize the soil of this forest is dry, and very hard, and cannot be broken through.
+
+As you give one last definitive thud to the ground, you hear a sharp metal click.
+
+[[Find out what that click was.]]
+
+[[Use the trees around you and leaves to make a good, primitive hut which will last through the night.]] 
+
+[[Sleep out in the open. Who needs shelter anyways?]] </tw-passagedata>
+<tw-passagedata pid="113" name="Sleep out in the open. Who needs shelter anyways?" tags="" position="1385,3938.3333333333335">As you start to lay down, using your bag as a crude pillow, it starts raining.
+
+You aren&#39;t happy to have decided to not make a shelter. The whole nighgt, you barely sleep as you are soaked in water every second.
+
+From this, you only restore 2 health poins.
+
+(set: $hp = $hp + 2)
+
+[[The city!]]</tw-passagedata>
+<tw-passagedata pid="114" name="Find out what that click was." tags="" position="1393,4321.666666666667">You find a small box where you started digging to make shelter. Inside this box, you find a small jewel that could be worth a nice amount of 75 gold.
+
+(set: $gold = $gold + 75)
+
+With this new addition, you now have $gold gold.
+
+[[Sleep out in the open. Who needs shelter anyways?]] 
+
+[[Use the trees around you and leaves to make a good, primitive hut which will last through the night.]] </tw-passagedata>
+<tw-passagedata pid="115" name="The city!" tags="" position="976.6666666666667,4881.666666666667">(display: &quot;wip&quot;)</tw-passagedata>
 </tw-storydata>
 
 
