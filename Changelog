@@ -40,8 +40,14 @@ Version 0.1.0 --
 --Spellchecked and fixed a bit of stuff, especialy parts where you could just loop for gold.
 
 Version 0.1.1 --
---Added up until Qualcen. Expect this very soon!
+--Added up until Qualcen.
 --More bugfixes.
 --More spellcheck.
 --Reduced chances of missing attacks starting with latest monster from 33% to 25%.
+
+Version 0.1.2 ---
+-- Added beginning parts of guild
+-- Thieves guild questline now contains an interesting choice
+-- More saves added
+-- Bugfixes
 
