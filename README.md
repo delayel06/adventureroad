@@ -1,4 +1,4 @@
-# You Are The Hero --  A RPG where your actions determine the plot!
+# Adventure Road --  A RPG where your actions determine the plot!
 
 This was developped using the Twine 2 software.
 
@@ -14,7 +14,7 @@ Do not hesitate to give me feedback on this, or any issues with the game. Thank 
  
 # Game
 
-The game is hosted by Github pages. You can find this site with the entirety of the game at http://youarethehero.tk
+The game is hosted by Github pages. You can find this site with the entirety of the game at http://adventureroad.tk
  
 # Questions
  
@@ -24,7 +24,7 @@ The game is hosted by Github pages. You can find this site with the entirety of 
  
 # Developer Access Area
 
-Developers, use this link to get to the developer page: http://youarethehero.tk/first.html
+Developers, use this link to get to the developer page: http://adventureroad.tk/first.html
  
  
 
