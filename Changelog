@@ -1,5 +1,5 @@
 Version 0.0.0 -- 
-The game is hosted! Come check it out at http://youarethehero.tk !
+The game is hosted! Come check it out at http://adventureroad.tk !
 
 Version 0.0.1 -- 
 -Save and load game function added. First save checkpoint will be after leaving a prison.
@@ -56,3 +56,6 @@ This system allows you to choose between using your primary weapon as well as ot
 --More saves
 --More thieves questline
 --Major Bugfix
+Version 0.1.6
+--Added more thieves questline
+--(Hopefully?) Fixed bug of recieving more HP when having high defense points
