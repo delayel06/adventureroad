@@ -70,7 +70,11 @@ background-color: #EBEBEB;
 }
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
 
 
 
@@ -1130,11 +1134,7 @@ He then turns around and heads for another door.
 (link: &quot;Continue&quot;)[
 (set: $log to &quot;enemy&quot;)
 (set: $turn to &quot;you&quot;)
-(if: $dp &gt; $eap)[
-(set: $equalizer = $dp - $eap)
-(set: $hp to it - $equalizer)
-]
-(else:)[
+(unless: $dp &gt; $eap)[
 (set: $hp to it - $eap)
 (set: $hp to it + $dp)]
 (goto: &quot;Combat&quot;)]]
