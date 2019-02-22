@@ -14,7 +14,7 @@ Do not hesitate to give me feedback on this, or any issues with the game. Thank 
  
 # Game
 
-The game is hosted by Github pages. You can find this site with the entirety of the game at http://adventureroad.tk
+The game is hosted by Github pages. You can find this site with the entirety of the game at (WEBSITE COMING)
  
 # Questions
  
@@ -24,7 +24,7 @@ The game is hosted by Github pages. You can find this site with the entirety of 
  
 # Developer Access Area
 
-Developers, use this link to get to the developer page: http://adventureroad.tk/first.html
+Developers, use this link to get to the developer page: (WRBSITE COMING)
  
  
 
