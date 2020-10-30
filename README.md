@@ -24,7 +24,7 @@ The game is hosted by Github pages. You can find this site with the entirety of 
  
 # Developer Access Area
 
-Developers, use this link to get to the developer page: (WRBSITE COMING)
+Developers, use this link to get to the developer page: (WEBSITE COMING)
  
  
 
